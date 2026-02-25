@@ -36,8 +36,11 @@ function Navbar() {
     const solidBg = 'rgba(13,31,16,0.97)'
     return (
         <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, display: 'flex', alignItems: 'center', padding: solid ? '0.65rem 5vw' : '1.15rem 5vw', background: solid ? solidBg : 'transparent', backdropFilter: solid ? 'blur(16px)' : 'none', boxShadow: solid ? '0 2px 20px rgba(0,0,0,0.5)' : 'none', transition: 'all 0.28s ease' }}>
-            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}>
-                <img src={logoImg} alt="Clear Woods NC" style={{ height: '48px', width: '48px', objectFit: 'contain', borderRadius: '8px' }} />
+            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.65rem', padding: 0 }}>
+                <img src={logoImg} alt="Clear Woods NC" style={{ height: '46px', width: '46px', objectFit: 'contain', borderRadius: '9px' }} />
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', letterSpacing: '0.04em', color: 'var(--cream)', textTransform: 'uppercase', lineHeight: 1.1 }}>
+                    Clear Woods <span style={{ color: 'var(--gold)' }}>NC</span>
+                </span>
             </button>
             {/* Desktop links — hidden on mobile via CSS */}
             <div className="nav-desktop" style={{ gap: '1.8rem', marginLeft: 'auto', alignItems: 'center' }}>
