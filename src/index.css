@@ -39,18 +39,20 @@
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
 body {
     font-family: var(--font-body);
     background: var(--cream);
     color: var(--ink);
     line-height: 1.6;
     overflow-x: hidden;
+    overscroll-behavior-x: none;
     -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overscroll-behavior-x: none;
 }
 
 a {
@@ -347,6 +349,23 @@ img {
     /* Headline scale */
     .headline {
         font-size: clamp(2.2rem, 8vw, 3.5rem);
+    }
+}
+
+/* ════════════════════════════════════
+   FORM — 2-col grid stacks on mobile
+═══════════════════════════════════════ */
+@media (max-width: 780px) {
+
+    /* Quote form inner grids collapse */
+    form [style*="gridTemplateColumns: '1fr 1fr'"],
+    form [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Form padding tighter on mobile */
+    form {
+        padding: 1.5rem !important;
     }
 }
 

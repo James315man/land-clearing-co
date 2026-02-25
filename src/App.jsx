@@ -36,11 +36,8 @@ function Navbar() {
     const solidBg = 'rgba(13,31,16,0.97)'
     return (
         <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, display: 'flex', alignItems: 'center', padding: solid ? '0.65rem 5vw' : '1.15rem 5vw', background: solid ? solidBg : 'transparent', backdropFilter: solid ? 'blur(16px)' : 'none', boxShadow: solid ? '0 2px 20px rgba(0,0,0,0.5)' : 'none', transition: 'all 0.28s ease' }}>
-            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.6rem', padding: 0 }}>
-                <img src={logoImg} alt="Clear Woods NC logo" style={{ height: '38px', width: '38px', objectFit: 'contain', borderRadius: '7px' }} />
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', letterSpacing: '0.03em', color: 'var(--cream)', textTransform: 'uppercase', lineHeight: 1 }}>
-                    Clear Woods <span style={{ color: 'var(--gold)' }}>NC</span>
-                </span>
+            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}>
+                <img src={logoImg} alt="Clear Woods NC" style={{ height: '48px', width: '48px', objectFit: 'contain', borderRadius: '8px' }} />
             </button>
             {/* Desktop links — hidden on mobile via CSS */}
             <div className="nav-desktop" style={{ gap: '1.8rem', marginLeft: 'auto', alignItems: 'center' }}>
@@ -420,7 +417,7 @@ function FAQ() {
 /* ── QUOTE ── */
 function Quote() {
     const ref = useReveal()
-    const [form, setForm] = useState({ name: '', phone: '', town: '', service: '', notes: '' })
+    const [form, setForm] = useState({ firstName: '', phone: '', email: '', zip: '', service: '', notes: '' })
     const [done, setDone] = useState(false)
     const [loading, setLoading] = useState(false)
     const onChange = e => setForm({ ...form, [e.target.name]: e.target.value })
@@ -461,31 +458,69 @@ function Quote() {
                             </div>
                         ) : (
                             <form onSubmit={onSubmit} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                                    <div><label style={labelStyle}>Your Name *</label><input name="name" type="text" required placeholder="John Smith" value={form.name} onChange={onChange} style={inputStyle} onFocus={e => e.target.style.borderColor = 'var(--amber)'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} /></div>
-                                    <div><label style={labelStyle}>Phone *</label><input name="phone" type="tel" required placeholder="(919) 555-0123" value={form.phone} onChange={onChange} style={inputStyle} onFocus={e => e.target.style.borderColor = 'var(--amber)'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} /></div>
-                                </div>
+                                {/* Row 1: Name + Phone */}
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                                     <div>
-                                        <label style={labelStyle}>Your Town</label>
-                                        <select name="town" value={form.town} onChange={onChange} style={{ ...inputStyle }}>
-                                            <option value="">Select...</option>
-                                            {['Willow Spring', 'Fuquay-Varina', 'Angier', 'Benson', 'Sanford', 'Lillington', 'Holly Springs', 'Apex', 'Garner', 'Clayton', 'Other'].map(t => <option key={t} value={t} style={{ background: 'var(--ink)' }}>{t}</option>)}
-                                        </select>
+                                        <label style={labelStyle} htmlFor="q-firstName">First Name *</label>
+                                        <input id="q-firstName" name="firstName" type="text" required
+                                            autoComplete="given-name"
+                                            placeholder="James"
+                                            value={form.firstName} onChange={onChange}
+                                            style={inputStyle}
+                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
+                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
                                     </div>
                                     <div>
-                                        <label style={labelStyle}>Service Needed</label>
-                                        <select name="service" value={form.service} onChange={onChange} style={{ ...inputStyle }}>
-                                            <option value="">Select...</option>
-                                            {['Land Clearing', 'Brush Clearing', 'Fire Mitigation', 'Multiple / Not Sure'].map(s => <option key={s} value={s} style={{ background: 'var(--ink)' }}>{s}</option>)}
-                                        </select>
+                                        <label style={labelStyle} htmlFor="q-phone">Phone *</label>
+                                        <input id="q-phone" name="phone" type="tel" required
+                                            autoComplete="tel"
+                                            placeholder="(919) 555-0123"
+                                            value={form.phone} onChange={onChange}
+                                            style={inputStyle}
+                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
+                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
                                     </div>
                                 </div>
+                                {/* Row 2: Email + ZIP */}
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                    <div>
+                                        <label style={labelStyle} htmlFor="q-email">Email *</label>
+                                        <input id="q-email" name="email" type="email" required
+                                            autoComplete="email"
+                                            placeholder="you@example.com"
+                                            value={form.email} onChange={onChange}
+                                            style={inputStyle}
+                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
+                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
+                                    </div>
+                                    <div>
+                                        <label style={labelStyle} htmlFor="q-zip">ZIP Code <span style={{ opacity: 0.45, fontWeight: 400 }}>(optional)</span></label>
+                                        <input id="q-zip" name="zip" type="text" inputMode="numeric" pattern="[0-9]*"
+                                            autoComplete="postal-code"
+                                            placeholder="27526"
+                                            value={form.zip} onChange={onChange}
+                                            style={inputStyle}
+                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
+                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
+                                    </div>
+                                </div>
+                                {/* Row 3: Service */}
                                 <div>
-                                    <label style={labelStyle}>About Your Property</label>
-                                    <textarea name="notes" rows={4} placeholder="Acreage, type of growth, slope, access..." value={form.notes} onChange={onChange}
+                                    <label style={labelStyle} htmlFor="q-service">Service Needed</label>
+                                    <select id="q-service" name="service" value={form.service} onChange={onChange} style={{ ...inputStyle }}>
+                                        <option value="">Select... (optional)</option>
+                                        {['Land Clearing', 'Brush Clearing', 'Fire Mitigation', 'Trail Cutting', 'Multiple / Not Sure'].map(s => <option key={s} value={s} style={{ background: 'var(--ink)' }}>{s}</option>)}
+                                    </select>
+                                </div>
+                                {/* Row 4: Notes */}
+                                <div>
+                                    <label style={labelStyle} htmlFor="q-notes">About Your Property</label>
+                                    <textarea id="q-notes" name="notes" rows={4}
+                                        placeholder="Acreage, type of growth, slope, access..."
+                                        value={form.notes} onChange={onChange}
                                         style={{ ...inputStyle, resize: 'vertical', minHeight: '90px' }}
-                                        onFocus={e => e.target.style.borderColor = 'var(--amber)'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
+                                        onFocus={e => e.target.style.borderColor = 'var(--amber)'}
+                                        onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
                                 </div>
                                 <button type="submit" disabled={loading} style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '1rem', borderRadius: '6px', border: 'none', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.94rem', letterSpacing: '0.05em', textTransform: 'uppercase', cursor: 'pointer', transition: 'background 0.2s', opacity: loading ? 0.7 : 1 }}
                                     onMouseEnter={e => !loading && (e.target.style.background = 'var(--gold)')} onMouseLeave={e => !loading && (e.target.style.background = 'var(--amber)')}>
