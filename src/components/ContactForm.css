@@ -1,0 +1,210 @@
+/* ===========================
+   CONTACT / QUOTE FORM
+   =========================== */
+
+.contact {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(61, 122, 82, 0.07), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.contact__left .section-subtitle {
+    margin-bottom: 2.5rem;
+    color: rgba(245, 240, 232, 0.7);
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.contact__phone {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--amber);
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.contact__phone:hover {
+    color: var(--amber-light);
+}
+
+.contact__location,
+.contact__hours {
+    font-size: 0.9rem;
+    color: rgba(245, 240, 232, 0.6);
+}
+
+.contact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.contact__tag {
+    display: inline-block;
+    background: rgba(61, 122, 82, 0.2);
+    border: 1px solid rgba(61, 122, 82, 0.3);
+    color: var(--forest-light);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+}
+
+/* Form */
+.contact__form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.1rem;
+}
+
+.form__field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(245, 240, 232, 0.7);
+    text-transform: uppercase;
+}
+
+.form__field input,
+.form__field select,
+.form__field textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    width: 100%;
+}
+
+.form__field select option {
+    background: var(--forest-dark);
+    color: var(--cream);
+}
+
+.form__field input:focus,
+.form__field select:focus,
+.form__field textarea:focus {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(212, 130, 10, 0.15);
+}
+
+.form__field input::placeholder,
+.form__field textarea::placeholder {
+    color: rgba(245, 240, 232, 0.3);
+}
+
+.form__field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form__submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.form__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.form__disclaimer {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    text-align: center;
+    color: rgba(245, 240, 232, 0.35);
+}
+
+/* Success state */
+.contact__success {
+    background: rgba(22, 163, 74, 0.08);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.contact__success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact__success h3 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.contact__success p {
+    color: rgba(245, 240, 232, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact__success a {
+    color: var(--amber);
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .contact__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form__row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form {
+        padding: 1.75rem 1.25rem;
+    }
+}

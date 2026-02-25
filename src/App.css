@@ -1,0 +1,4 @@
+/* App-level resets — per-component styles live in their own .css files */
+#root {
+    isolation: isolate;
+}

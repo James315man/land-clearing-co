@@ -1,0 +1,130 @@
+/* ===========================
+   FOOTER
+   =========================== */
+
+.footer {
+    background: var(--forest-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer__top {
+    padding: 4rem var(--section-px);
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+
+.footer__logo strong {
+    color: var(--amber);
+}
+
+.footer__tagline {
+    font-size: 0.875rem;
+    color: rgba(245, 240, 232, 0.55);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    max-width: 320px;
+}
+
+.footer__phone {
+    display: inline-block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--amber);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer__phone:hover {
+    color: var(--amber-light);
+}
+
+.footer__links-col h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 1.25rem;
+}
+
+.footer__links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer__links-col li button,
+.footer__links-col li span {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: rgba(245, 240, 232, 0.6);
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    text-align: left;
+}
+
+.footer__links-col li button:hover {
+    color: var(--amber-light);
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.25rem var(--section-px);
+}
+
+.footer__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer__bottom p {
+    font-size: 0.8rem;
+    color: rgba(245, 240, 232, 0.35);
+}
+
+.footer__legal {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--forest-light) !important;
+}
+
+@media (max-width: 900px) {
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__bottom-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

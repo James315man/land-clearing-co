@@ -1,0 +1,138 @@
+/* ===========================
+   TESTIMONIALS
+   =========================== */
+
+.testimonials {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '"';
+    position: absolute;
+    top: 3rem;
+    right: 5%;
+    font-family: var(--font-display);
+    font-size: 20rem;
+    color: rgba(255, 255, 255, 0.02);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testi__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.testi__carousel {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(28, 66, 40, 0.35), rgba(13, 31, 21, 0.6));
+    border: 1px solid rgba(61, 122, 82, 0.2);
+    border-radius: 16px;
+    padding: 3rem 3.5rem;
+}
+
+.testi__stars {
+    color: var(--amber-glow);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.testi__quote {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+}
+
+.testi__author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.testi__author strong {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--amber);
+}
+
+.testi__author span {
+    font-size: 0.8rem;
+    color: rgba(245, 240, 232, 0.5);
+}
+
+.testi__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.testi__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--cream);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testi__btn:hover {
+    background: rgba(212, 130, 10, 0.2);
+    border-color: var(--amber);
+}
+
+.testi__dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testi__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.testi__dot.active {
+    background: var(--amber);
+    transform: scale(1.3);
+}
+
+.testi__badge {
+    text-align: center;
+}
+
+.testi__badge span {
+    display: inline-block;
+    background: rgba(212, 130, 10, 0.12);
+    border: 1px solid rgba(212, 130, 10, 0.3);
+    color: var(--amber-light);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 600px) {
+    .testi__carousel {
+        padding: 2rem 1.5rem;
+    }
+}

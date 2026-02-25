@@ -1,0 +1,157 @@
+/* ===========================
+   PAIN POINTS SECTION
+   =========================== */
+
+.pain-points {
+    position: relative;
+}
+
+.pp__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.pp__columns {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.pp__col-title {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid;
+}
+
+.pp__col--pain .pp__col-title {
+    color: var(--gray-600);
+    border-color: var(--gray-200);
+}
+
+.pp__col-title--gain {
+    color: var(--forest-green);
+    border-color: var(--forest-light);
+}
+
+.pp__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.pp__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+}
+
+.pp__item--pain {
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    color: var(--gray-600);
+}
+
+.pp__item--gain {
+    background: rgba(22, 163, 74, 0.06);
+    border: 1px solid rgba(22, 163, 74, 0.15);
+    color: var(--forest-dark);
+}
+
+.pp__emoji {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Center VS divider */
+.pp__divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 3.5rem;
+}
+
+.pp__divider-line {
+    width: 2px;
+    flex: 1;
+    background: var(--gray-200);
+    min-height: 40px;
+}
+
+.pp__divider-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--forest-dark);
+    border: 2px solid var(--amber);
+    color: var(--amber);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* No-burn callout */
+.pp__callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: linear-gradient(135deg, rgba(212, 130, 10, 0.12), rgba(212, 130, 10, 0.04));
+    border: 1px solid rgba(212, 130, 10, 0.3);
+    border-left: 4px solid var(--amber);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+}
+
+.pp__callout-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.pp__callout-text {
+    font-size: 1rem;
+    color: var(--forest-dark);
+    line-height: 1.65;
+}
+
+.pp__callout-text strong {
+    color: var(--forest-green);
+}
+
+@media (max-width: 768px) {
+    .pp__columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .pp__divider {
+        flex-direction: row;
+        padding-top: 0;
+    }
+
+    .pp__divider-line {
+        width: 40px;
+        height: 2px;
+        min-height: unset;
+    }
+
+    .pp__callout {
+        flex-direction: column;
+    }
+}
