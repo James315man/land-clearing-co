@@ -1,0 +1,131 @@
+/* ══════════════════════════════════
+   PINE TREE BUTTON
+   The button IS the tree.
+   Tip points right → feels like a CTA arrow.
+   Sways in the wind at idle.
+══════════════════════════════════ */
+
+.pine-btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    position: relative;
+
+    /* Sway anchor = trunk/root (left-center) */
+    transform-origin: 2% 50%;
+    animation: pine-sway 4.2s ease-in-out infinite;
+
+    /* Subtle drop shadow to look grounded */
+    filter: drop-shadow(0 6px 18px rgba(20, 100, 40, 0.55)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+
+    transition: filter 0.25s ease;
+    will-change: transform;
+}
+
+.pine-btn:hover {
+    animation: pine-sway-fast 1.4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 28px rgba(46, 204, 95, 0.75)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.pine-btn:active {
+    animation: none;
+    transform: rotate(-5deg) scaleX(0.97);
+    transition: transform 0.08s ease;
+}
+
+.pine-btn__svg {
+    display: block;
+    /* Base size — lg */
+    width: 260px;
+    height: auto;
+    overflow: visible;
+}
+
+/* ── Size variants ── */
+.pine-btn--sm .pine-btn__svg {
+    width: 200px;
+}
+
+.pine-btn--md .pine-btn__svg {
+    width: 240px;
+}
+
+.pine-btn--lg .pine-btn__svg {
+    width: 280px;
+}
+
+.pine-btn--call .pine-btn__svg {
+    width: 250px;
+}
+
+/* ── Sway keyframes — organic, not perfectly rhythmic ── */
+
+/* Idle sway — gentle, breeze-like */
+@keyframes pine-sway {
+    0% {
+        transform: rotate(-1.2deg) translateY(0px);
+    }
+
+    15% {
+        transform: rotate(2.1deg) translateY(-1.5px);
+    }
+
+    30% {
+        transform: rotate(-0.6deg) translateY(0.5px);
+    }
+
+    48% {
+        transform: rotate(2.8deg) translateY(-2px);
+    }
+
+    62% {
+        transform: rotate(-1.8deg) translateY(1px);
+    }
+
+    78% {
+        transform: rotate(1.5deg) translateY(-1px);
+    }
+
+    90% {
+        transform: rotate(-0.9deg) translateY(0px);
+    }
+
+    100% {
+        transform: rotate(-1.2deg) translateY(0px);
+    }
+}
+
+/* Hover sway — tree excited, faster wind */
+@keyframes pine-sway-fast {
+    0% {
+        transform: rotate(-3deg) translateY(0px);
+    }
+
+    25% {
+        transform: rotate(4deg) translateY(-3px);
+    }
+
+    50% {
+        transform: rotate(-2.5deg) translateY(1px);
+    }
+
+    75% {
+        transform: rotate(3.5deg) translateY(-2px);
+    }
+
+    100% {
+        transform: rotate(-3deg) translateY(0px);
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+
+    .pine-btn,
+    .pine-btn:hover {
+        animation: none;
+    }
+}

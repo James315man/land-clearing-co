@@ -1,219 +1,243 @@
-/* ===========================
-   CLEAR WOODS CREW — Global CSS
-   =========================== */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-  /* Color Palette */
-  --forest-dark:    #0d1f15;
-  --forest-deep:    #132818;
-  --forest-green:   #1c4228;
-  --forest-mid:     #2a5c3a;
-  --forest-light:   #3d7a52;
-  --amber:          #d4820a;
-  --amber-light:    #f59e0b;
-  --amber-glow:     #fbbf24;
-  --cream:          #f5f0e8;
-  --cream-dark:     #ede8dc;
-  --white:          #ffffff;
-  --gray-50:        #fafaf9;
-  --gray-100:       #f5f5f4;
-  --gray-200:       #e7e5e4;
-  --gray-400:       #a8a29e;
-  --gray-600:       #57534e;
-  --gray-800:       #292524;
-  --danger:         #dc2626;
-  --success:        #16a34a;
+    /* V2 Palette — Deep Forest Green */
+    --ink: #0d1f10;
+    --charcoal: #111f14;
+    --dark-warm: #152a19;
+    --earth: #1c3822;
+    --amber: #2ecc5f;
+    --amber-hot: #27b353;
+    --gold: #4ddb78;
+    --cream: #f0faf2;
+    --cream-dark: #dff0e3;
+    --sand: #a8cdb0;
+    --white: #ffffff;
+    --green-dark: #0d1f10;
+    --green-mid: #1c5c2a;
+    --green-lite: #2ecc5f;
+    --red: #c0392b;
+    --success: #27ae60;
+    --danger: #e74c3c;
 
-  /* Typography */
-  --font-display:   'Bebas Neue', 'Impact', sans-serif;
-  --font-body:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Spacing */
-  --section-px:     clamp(1.5rem, 5vw, 6rem);
-  --section-py:     clamp(5rem, 10vw, 9rem);
+    --font-display: 'Barlow Condensed', 'Impact', sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
 
-  /* Shadows */
-  --shadow-sm:      0 2px 8px rgba(0,0,0,0.12);
-  --shadow-md:      0 8px 32px rgba(0,0,0,0.18);
-  --shadow-lg:      0 20px 60px rgba(0,0,0,0.28);
-  --shadow-glow:    0 0 40px rgba(212,130,10,0.35);
+    --px: clamp(1.5rem, 5vw, 6rem);
+    --py: clamp(5rem, 9vw, 8rem);
 
-  /* Transitions */
-  --ease-smooth:    cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+    --radius: 6px;
+    --shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.28);
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--forest-dark);
-  color: var(--cream);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
-/* ===========================
-   UTILITY CLASSES
-   =========================== */
-
+/* ---- Layout ---- */
 .section {
-  padding: var(--section-py) var(--section-px);
+    padding: var(--py) var(--px);
 }
 
-.section--light {
-  background-color: var(--cream);
-  color: var(--forest-dark);
+.section--cream {
+    background: var(--cream);
+}
+
+.section--white {
+    background: var(--white);
 }
 
 .section--dark {
-  background-color: var(--forest-dark);
+    background: var(--charcoal);
+    color: var(--cream);
 }
 
-.section--mid {
-  background-color: var(--forest-deep);
+.section--ink {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.section--earth {
+    background: var(--earth);
+    color: var(--cream);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.section-label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.75rem;
-  display: block;
+.eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.6rem;
 }
 
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.0;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.25rem;
+.headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
 }
 
-.section-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--gray-400);
-  max-width: 600px;
+.subhead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--sand);
+    max-width: 580px;
 }
 
-/* ===========================
-   BUTTONS
-   =========================== */
-
+/* ---- Buttons ---- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2rem;
-  border-radius: 4px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.25s var(--ease-smooth);
-  white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.9rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.22s var(--ease);
+    white-space: nowrap;
 }
 
-.btn-primary {
-  background-color: var(--amber);
-  color: var(--forest-dark);
-  border-color: var(--amber);
+.btn-amber {
+    background: var(--amber);
+    color: var(--ink);
+    border-color: var(--amber);
 }
 
-.btn-primary:hover {
-  background-color: var(--amber-light);
-  border-color: var(--amber-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+.btn-amber:hover {
+    background: var(--amber-hot);
+    border-color: var(--amber-hot);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201, 122, 16, 0.4);
 }
 
-.btn-outline {
-  background-color: transparent;
-  color: var(--cream);
-  border-color: rgba(245,240,232,0.4);
+.btn-outline-w {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.35);
 }
 
-.btn-outline:hover {
-  border-color: var(--cream);
-  background-color: rgba(245,240,232,0.1);
-  transform: translateY(-2px);
+.btn-outline-w:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.btn-outline-dark:hover {
+    background: var(--ink);
+    color: var(--cream);
 }
 
 .btn-lg {
-  padding: 1.1rem 2.5rem;
-  font-size: 1rem;
+    padding: 1.05rem 2.4rem;
+    font-size: 0.95rem;
 }
 
-/* ===========================
-   SCROLL ANIMATIONS
-   =========================== */
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+/* ---- Scroll Reveal ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
 }
 
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.visible {
+    opacity: 1;
+    transform: none;
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.6s var(--ease-smooth);
+.reveal-fade {
+    opacity: 0;
+    transition: opacity 0.55s var(--ease);
 }
 
-.fade-in.visible {
-  opacity: 1;
+.reveal-fade.visible {
+    opacity: 1;
 }
 
-/* stagger children */
-.stagger-children > *:nth-child(1) { transition-delay: 0.0s; }
-.stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
-.stagger-children > *:nth-child(3) { transition-delay: 0.2s; }
-.stagger-children > *:nth-child(4) { transition-delay: 0.3s; }
-.stagger-children > *:nth-child(5) { transition-delay: 0.4s; }
-.stagger-children > *:nth-child(6) { transition-delay: 0.5s; }
+.d1 {
+    transition-delay: 0.05s;
+}
 
-/* ===========================
-   SCROLLBAR
-   =========================== */
+.d2 {
+    transition-delay: 0.15s;
+}
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--forest-dark); }
-::-webkit-scrollbar-thumb { background: var(--forest-mid); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--forest-light); }
+.d3 {
+    transition-delay: 0.25s;
+}
+
+.d4 {
+    transition-delay: 0.35s;
+}
+
+.d5 {
+    transition-delay: 0.45s;
+}
+
+.d6 {
+    transition-delay: 0.55s;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--earth);
+    border-radius: 3px;
+}
