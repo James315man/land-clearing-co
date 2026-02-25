@@ -241,3 +241,151 @@ img {
     background: var(--earth);
     border-radius: 3px;
 }
+
+/* ════════════════════════════════════
+   NAV — desktop shows links, mobile shows hamburger
+═══════════════════════════════════════ */
+
+/* Desktop (>780px): show links row, hide hamburger */
+.nav-desktop {
+    display: flex;
+}
+
+.nav-hamburger {
+    display: none;
+}
+
+/* Mobile (≤780px): hide links row, show hamburger */
+@media (max-width: 780px) {
+    .nav-desktop {
+        display: none !important;
+    }
+
+    .nav-hamburger {
+        display: flex !important;
+    }
+}
+
+/* ════════════════════════════════════
+   HERO — stack on mobile
+═══════════════════════════════════════ */
+@media (max-width: 780px) {
+
+    /* Hero: single column, machine image below */
+    #top {
+        flex-direction: column !important;
+        min-height: 100svh;
+    }
+
+    /* Text panel: full width, less side padding */
+    #top>div:first-child {
+        flex: none !important;
+        width: 100% !important;
+        padding: 7rem 1.5rem 2.5rem !important;
+    }
+
+    /* Machine photo: fixed height banner below text */
+    #top>div:last-child {
+        flex: none !important;
+        width: 100% !important;
+        height: 260px;
+    }
+
+    #top>div:last-child img {
+        height: 260px;
+        object-position: 30% center;
+    }
+}
+
+/* ════════════════════════════════════
+   SECTIONS — collapse two-column grids
+═══════════════════════════════════════ */
+@media (max-width: 780px) {
+    .section {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* All inline two-column grids collapse */
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="gridTemplateColumns: '1fr 1fr'"],
+    [style*="grid-template-columns: '1fr 1fr'"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Same for the 2fr / 1.4fr variants */
+    [style*="gridTemplateColumns: '2fr 1fr'"],
+    [style*="gridTemplateColumns: '1fr 1.4fr'"],
+    [style*="gridTemplateColumns: '1fr 2fr'"],
+    [style*="gridTemplateColumns: '1fr 0.9fr'"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Sticky aside cards: un-stick on mobile */
+    [style*="position:'sticky'"],
+    [style*="position: 'sticky'"] {
+        position: static !important;
+    }
+
+    /* Footer four-column → two-column */
+    [style*="gridTemplateColumns: '2fr 1fr 1fr 1fr'"] {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    [style*="grid-template-columns: '2fr 1fr 1fr 1fr'"] {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Proof bar wraps */
+    [style*="justify-content: center"] {
+        gap: 0.75rem !important;
+    }
+
+    /* Headline scale */
+    .headline {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+    }
+}
+
+/* ════════════════════════════════════
+   PINE TREE BUTTONS — smaller on mobile
+═══════════════════════════════════════ */
+@media (max-width: 780px) {
+    .pine-btn__svg {
+        width: 200px !important;
+    }
+
+    .pine-btn--lg .pine-btn__svg,
+    .pine-btn--call .pine-btn__svg {
+        width: 210px !important;
+    }
+}
+
+/* ════════════════════════════════════
+   SMALL PHONES (≤480px) — extra tuning
+═══════════════════════════════════════ */
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    [style*="gap: '5rem'"] {
+        gap: 2rem !important;
+    }
+
+    [style*="gap: '3rem'"] {
+        gap: 1.5rem !important;
+    }
+
+    .headline {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    /* Before/after 1fr 1fr → single column */
+    [style*="repeat(auto-fit"] {
+        grid-template-columns: 1fr !important;
+    }
+}

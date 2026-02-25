@@ -39,21 +39,21 @@ function Navbar() {
                 <span style={{ fontSize: '1.25rem' }}>🌲</span>
                 <span style={{ color: 'var(--gold)' }}>Clear Woods</span> Crew
             </button>
-            {/* Desktop links */}
-            <div className="nav-desktop" style={{ display: 'flex', gap: '1.8rem', marginLeft: 'auto', alignItems: 'center' }}>
+            {/* Desktop links — hidden on mobile via CSS */}
+            <div className="nav-desktop" style={{ gap: '1.8rem', marginLeft: 'auto', alignItems: 'center' }}>
                 {[['Services', '#services'], ['How It Works', '#how-it-works'], ['Results', '#results'], ['FAQ', '#faq']].map(([l, id]) => (
                     <button key={l} onClick={() => nav(id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(240,250,242,0.72)', fontSize: '0.85rem', fontWeight: 500, fontFamily: 'var(--font-body)', transition: 'color 0.2s' }}
                         onMouseEnter={e => e.target.style.color = 'var(--gold)'} onMouseLeave={e => e.target.style.color = 'rgba(240,250,242,0.72)'}>{l}</button>
                 ))}
-                <a href="tel:6419191107" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.65rem 1.4rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.83rem', letterSpacing: '0.04em', textTransform: 'uppercase', transition: 'background 0.2s' }}
+                <a href="tel:6419191107" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.65rem 1.4rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.83rem', letterSpacing: '0.04em', textTransform: 'uppercase', transition: 'background 0.2s', whiteSpace: 'nowrap' }}
                     onMouseEnter={e => e.currentTarget.style.background = 'var(--gold)'} onMouseLeave={e => e.currentTarget.style.background = 'var(--amber)'}>
                     Call (641) 919-1107
                 </a>
             </div>
-            {/* Hamburger */}
-            <button onClick={() => setOpen(!open)} aria-label="Menu" className="nav-hamburger" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: '4px', display: 'none', flexDirection: 'column', gap: '5px' }}>
+            {/* Hamburger — visible on mobile via CSS */}
+            <button onClick={() => setOpen(!open)} aria-label="Menu" className="nav-hamburger" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: '8px', flexDirection: 'column', gap: '5px' }}>
                 {[0, 1, 2].map(i => <span key={i} style={{
-                    display: 'block', width: '22px', height: '2px', background: 'white', borderRadius: '2px', transition: 'all 0.3s',
+                    display: 'block', width: '24px', height: '2px', background: 'white', borderRadius: '2px', transition: 'all 0.3s',
                     transform: open && i === 0 ? 'translateY(7px) rotate(45deg)' : open && i === 2 ? 'translateY(-7px) rotate(-45deg)' : 'none', opacity: open && i === 1 ? 0 : 1
                 }} />)}
             </button>
@@ -88,8 +88,8 @@ function Hero() {
                 </h1>
 
                 <p style={{ fontSize: 'clamp(0.92rem,1.2vw,1.05rem)', color: 'rgba(240,250,242,0.72)', maxWidth: '430px', lineHeight: 1.72, marginBottom: '2.2rem' }}>
-                    We run a white skid steer with a professional forestry mulcher — grinding overgrown brush, briars,
-                    and invasive trees into clean mulch, right where they stand. No hauling. No burning. No mess.
+                    We operate a Bobcat T77 compact track loader fitted with a professional forestry mulcher — processing dense brush, briars,
+                    and trees into clean organic mulch on-site, in a single pass. No hauling. No burning. No mess.
                 </p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem', alignItems: 'center' }}>
@@ -113,7 +113,7 @@ function Hero() {
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100px', height: '100%', background: 'linear-gradient(to right,var(--ink),transparent)', zIndex: 1 }} />
                 <img
                     src={machineImg}
-                    alt="White skid steer S77 with forestry mulcher clearing land in North Carolina"
+                    alt="Bobcat T77 compact track loader with forestry mulcher clearing land in North Carolina"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '30% center', display: 'block' }}
                 />
                 {/* Bottom fade */}
@@ -121,7 +121,7 @@ function Hero() {
                 {/* Machine badge bottom-right */}
                 <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', zIndex: 2, background: 'rgba(13,31,16,0.88)', backdropFilter: 'blur(10px)', border: '1px solid rgba(46,204,95,0.25)', padding: '0.55rem 1.1rem', borderRadius: '5px' }}>
                     <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '2px' }}>Our Machine</div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--cream)' }}>Skid Steer S77 · Forestry Mulcher</div>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--cream)' }}>Bobcat T77 · Forestry Mulcher</div>
                 </div>
             </div>
         </section>
@@ -196,7 +196,7 @@ function Services() {
                     <span className="eyebrow reveal">What We Do</span>
                     <h2 className="headline reveal d2" style={{ color: 'var(--cream)' }}>Three Jobs.<br />One Machine. Done Right.</h2>
                     <p style={{ color: 'var(--sand)', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }} className="reveal d3">
-                        No subcontractors. No middleman. Just our white skid steer with a forestry mulcher and a crew that takes pride in results.
+                        No subcontractors. No middlemen. Just our Bobcat T77 with a professional forestry mulcher and a crew that takes pride in every job.
                     </p>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
@@ -225,7 +225,7 @@ function HowItWorks() {
     const steps = [
         { n: '01', title: 'You Call or Text', body: "Reach us at (641) 919-1107 or drop your info in the form. Tell us where the property is, roughly how much needs clearing, and what you're dealing with. Takes 2 minutes." },
         { n: '02', title: 'We Quote It Fast', body: "We'll review your property and get you a straight answer — no fluff, no upsell. Just a real number for real work. Most quotes come back same day." },
-        { n: '03', title: 'We Show Up & Clear It', body: "Our white skid steer rolls on, the mulcher goes to work, and by end of day you've got cleared land. No burn pile smoldering for a week. Just results." },
+        { n: '03', title: 'We Show Up & Clear It', body: "The Bobcat T77 rolls on, the forestry mulcher gets to work, and by end of day you have cleared, usable land. No burn pile smoldering for a week. No hauling. Just results." },
     ]
     return (
         <section id="how-it-works" className="section section--cream" ref={ref}>
@@ -308,7 +308,7 @@ function Results() {
                     <div>
                         <span className="eyebrow">The Machine</span>
                         <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', fontWeight: 800, color: 'var(--cream)', textTransform: 'uppercase', lineHeight: 1, marginBottom: '1rem' }}>
-                            Skid Steer S77<br /><span style={{ color: 'var(--amber)' }}>Forestry Mulcher</span>
+                            Bobcat T77<br /><span style={{ color: 'var(--amber)' }}>Forestry Mulcher</span>
                         </div>
                         <p style={{ color: 'var(--sand)', fontSize: '0.93rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                             You've probably seen this white machine working off 401 past the water tower in Fuquay-Varina, or on a job out toward Clayton. That's us — your neighbors. It chews through briars, honeysuckle, and trees up to 8 inches thick and turns every bit of it into clean mulch right where it stands. No hauling. No burn pile. Done by dark.
@@ -322,7 +322,7 @@ function Results() {
                         </div>
                     </div>
                     <div style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.5)' }}>
-                        <img src={machineImg} alt="White skid steer with forestry mulcher" style={{ width: '100%', height: '300px', objectFit: 'cover', objectPosition: '30% center', display: 'block' }} loading="lazy" />
+                        <img src={machineImg} alt="Bobcat T77 compact track loader with forestry mulcher — Clear Woods Crew, NC" style={{ width: '100%', height: '300px', objectFit: 'cover', objectPosition: '30% center', display: 'block' }} loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -378,10 +378,10 @@ function FAQ() {
     const faqs = [
         { q: "Do you really leave no burn pile?", a: "Every single job. Our forestry mulcher grinds brush, saplings, and small trees into fine organic material right on-site. Nothing to haul, nothing to burn. The mulch stays on your land and improves the soil." },
         { q: "How fast can you get to me?", a: "Most jobs are scheduled within the same week. If you're in Fuquay-Varina, Angier, Benson, Willow Spring, Sanford, Lillington, or surrounding areas, call us and we'll tell you where our schedule sits." },
-        { q: "What can the machine actually handle?", a: "Our skid steer with forestry mulcher clears trees up to about 6-8 inches in diameter, plus any brush, briars, honeysuckle, scrub, and invasive vines. For bigger hardwoods, we'll tell you upfront — no surprises." },
+        { q: "What can the machine handle?", a: "Our Bobcat T77 with a forestry mulcher processes trees up to 8 inches in diameter, plus brush, briars, honeysuckle, scrub, and invasive vines — in a single pass. For larger hardwoods, we'll tell you upfront before any work begins." },
         { q: "How do you price jobs?", a: "By the job, not the hour. We look at your acreage, the density of what needs clearing, and any access challenges, then give you a flat quote. You'll know exactly what you're paying before we start." },
         { q: "Are you licensed and insured?", a: "Yes. Full liability insurance and proper licensing. We'll show proof before any work begins. You're getting a professional operation that covers you if anything goes sideways." },
-        { q: "Can you work on steep or rough terrain?", a: "That's where a skid steer really shines. Where tractors struggle, ours moves. If you've got a slope or rough access, tell us — we've likely dealt with worse." },
+        { q: "Can you work on steep or rough terrain?", a: "The Bobcat T77 compact track loader excels where wheeled equipment can't go. Slopes, wet ground, tight access — it handles all of it. If your property is a challenge, that's exactly what this machine is built for." },
     ]
     return (
         <section id="faq" className="section" style={{ background: 'white' }} ref={ref}>
