@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import PainPoints from './components/PainPoints'
 import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
+import Gallery from './components/Gallery'
 import WhyUs from './components/WhyUs'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
@@ -19,6 +20,7 @@ function App() {
                 <PainPoints />
                 <Services />
                 <HowItWorks />
+                <Gallery />
                 <WhyUs />
                 <Testimonials />
                 <FAQ />

@@ -110,9 +110,9 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
     .navbar__cta {
-        display: none;
+        display: none !important;
     }
 
     .navbar__hamburger {
