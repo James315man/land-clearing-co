@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import machineImg from './assets/machine.png'
 import beforeImg from './assets/before.png'
 import afterImg from './assets/after.png'
+import logoImg from './assets/logo.png'
 import LiquidButton from './components/LiquidButton'
 import PineTreeButton from './components/PineTreeButton'
 import './index.css'
@@ -35,9 +36,11 @@ function Navbar() {
     const solidBg = 'rgba(13,31,16,0.97)'
     return (
         <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, display: 'flex', alignItems: 'center', padding: solid ? '0.65rem 5vw' : '1.15rem 5vw', background: solid ? solidBg : 'transparent', backdropFilter: solid ? 'blur(16px)' : 'none', boxShadow: solid ? '0 2px 20px rgba(0,0,0,0.5)' : 'none', transition: 'all 0.28s ease' }}>
-            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>🌲</span>
-                <span style={{ color: 'var(--gold)' }}>Clear Woods</span> Crew
+            <button onClick={() => nav('#top')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.6rem', padding: 0 }}>
+                <img src={logoImg} alt="Clear Woods NC logo" style={{ height: '38px', width: '38px', objectFit: 'contain', borderRadius: '7px' }} />
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', letterSpacing: '0.03em', color: 'var(--cream)', textTransform: 'uppercase', lineHeight: 1 }}>
+                    Clear Woods <span style={{ color: 'var(--gold)' }}>NC</span>
+                </span>
             </button>
             {/* Desktop links — hidden on mobile via CSS */}
             <div className="nav-desktop" style={{ gap: '1.8rem', marginLeft: 'auto', alignItems: 'center' }}>
