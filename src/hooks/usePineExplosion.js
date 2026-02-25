@@ -203,10 +203,10 @@ export function triggerMulchExplosion(treeX, treeY, machImg) {
     const T = {
         treeGrowEnd: 340,
         machIn: 260,   // machine starts entering
-        impact: 700,   // machine hits tree
-        explode: 720,   // chips spawn
-        machGone: 1500,  // machine off screen
-        done: 2900,
+        impact: 950,   // machine hits tree  (was 700 — slower approach)
+        explode: 970,   // chips spawn
+        machGone: 2100,   // machine off screen (was 1500 — lingers longer)
+        done: 3400,
     }
 
     const START = performance.now()
