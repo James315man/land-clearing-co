@@ -89,3 +89,18 @@
     color: var(--gray-600);
     line-height: 1.72;
 }
+
+@media (max-width: 600px) {
+    .faq__question {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .faq__answer p {
+        padding: 0 1rem 1.25rem;
+    }
+
+    .faq__list {
+        max-width: 100%;
+    }
+}

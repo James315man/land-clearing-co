@@ -37,24 +37,6 @@ export default function ContactForm() {
                         <p className="section-subtitle">
                             Tell us where you are and what you're dealing with. We'll get back to you quickly with an honest quote — no pressure, no runaround.
                         </p>
-
-                        <div className="contact__info">
-                            <a href="tel:6419191107" className="contact__phone" id="contact-phone">
-                                📞 (641) 919-1107
-                            </a>
-                            <p className="contact__location">
-                                📍 Willow Spring, NC — Serving south of Raleigh
-                            </p>
-                            <p className="contact__hours">
-                                🕐 Mon–Sat, 7am–6pm
-                            </p>
-                        </div>
-
-                        <div className="contact__tags">
-                            {['Licensed & Insured', 'No Burn Piles', 'Free Quotes', 'Same-Week Scheduling'].map(t => (
-                                <span key={t} className="contact__tag">✔ {t}</span>
-                            ))}
-                        </div>
                     </div>
 
                     <div className="contact__right fade-up">
@@ -136,6 +118,11 @@ export default function ContactForm() {
                                 <p className="form__disclaimer">
                                     We typically respond within a few hours during business hours.
                                 </p>
+                                <div className="contact__tags contact__tags--subtle">
+                                    {['Licensed & Insured', 'No Burn Piles', 'Free Quotes', 'Same-Week Scheduling'].map(t => (
+                                        <span key={t} className="contact__tag contact__tag--subtle">✔ {t}</span>
+                                    ))}
+                                </div>
                             </form>
                         )}
                     </div>
