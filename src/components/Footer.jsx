@@ -36,7 +36,7 @@ export default function Footer() {
                             <li><button onClick={() => handleNav('#how-it-works')}>How It Works</button></li>
                             <li><button onClick={() => handleNav('#reviews')}>Reviews</button></li>
                             <li><button onClick={() => handleNav('#faq')}>FAQ</button></li>
-                            <li><button onClick={() => handleNav('#quote')}>Get a Quote</button></li>
+                            <li><button onClick={() => handleNav('#quote-form')}>Get a Quote</button></li>
                         </ul>
                     </div>
 

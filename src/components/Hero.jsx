@@ -46,7 +46,7 @@ export default function Hero() {
                     <button
                         className="btn btn-outline btn-lg"
                         id="hero-cta-quote"
-                        onClick={() => handleScroll('#quote')}
+                        onClick={() => handleScroll('#quote-form')}
                     >
                         Get a Free Quote
                     </button>

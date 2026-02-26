@@ -49,9 +49,9 @@ export default function Services() {
                             <h3 className="service-card__title">{s.title}</h3>
                             <p className="service-card__tagline">{s.tagline}</p>
                             <p className="service-card__desc">{s.description}</p>
-                            <a href="#quote" className="service-card__link" onClick={e => {
+                            <a href="#quote-form" className="service-card__link" onClick={e => {
                                 e.preventDefault()
-                                document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' })
+                                document.querySelector('#quote-form')?.scrollIntoView({ behavior: 'smooth' })
                             }}>
                                 Get a Free Quote →
                             </a>

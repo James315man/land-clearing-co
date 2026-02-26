@@ -41,9 +41,9 @@ export default function Gallery() {
                             <li><span>🚫🔥</span> Zero burn piles — mulch stays on-site</li>
                             <li><span>📐</span> Works on slopes, tight spaces & rough terrain</li>
                         </ul>
-                        <a href="#quote" className="btn btn-primary" onClick={e => {
+                        <a href="#quote-form" className="btn btn-primary" onClick={e => {
                             e.preventDefault()
-                            document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' })
+                            document.querySelector('#quote-form')?.scrollIntoView({ behavior: 'smooth' })
                         }}>Get a Free Quote →</a>
                     </div>
                     <div className="gallery__equipment-img">
