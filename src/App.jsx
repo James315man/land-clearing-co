@@ -420,17 +420,6 @@ function FAQ() {
 /* ── QUOTE ── */
 function Quote() {
     const ref = useReveal()
-    const [form, setForm] = useState({ firstName: '', phone: '', email: '', zip: '', service: '', notes: '' })
-    const [done, setDone] = useState(false)
-    const [loading, setLoading] = useState(false)
-    const onChange = e => setForm({ ...form, [e.target.name]: e.target.value })
-    const onSubmit = async e => {
-        e.preventDefault(); setLoading(true)
-        await new Promise(r => setTimeout(r, 1100))
-        setLoading(false); setDone(true)
-    }
-    const inputStyle = { background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '6px', padding: '0.8rem 1rem', color: 'var(--cream)', fontSize: '0.92rem', fontFamily: 'var(--font-body)', outline: 'none', transition: 'border-color 0.2s', width: '100%' }
-    const labelStyle = { fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(240,250,242,0.55)', display: 'block', marginBottom: '0.35rem' }
     return (
         <section id="quote" className="section section--ink" ref={ref}>
             <div className="container">
@@ -453,85 +442,23 @@ function Quote() {
                         </div>
                     </div>
                     <div className="reveal d2" id="quote-form">
-                        {done ? (
-                            <div style={{ textAlign: 'center', padding: '4rem 2rem', background: 'rgba(39,174,96,0.1)', border: '1px solid rgba(39,174,96,0.25)', borderRadius: '10px' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-                                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: 'var(--cream)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>Got It!</div>
-                                <p style={{ color: 'rgba(240,250,242,0.68)', lineHeight: 1.6 }}>We'll be in touch fast. Fastest response: <a href="tel:6419191107" style={{ color: 'var(--amber)', fontWeight: 700 }}>(641) 919-1107</a>.</p>
-                            </div>
-                        ) : (
-                            <form onSubmit={onSubmit} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                {/* Row 1: Name + Phone */}
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                                    <div>
-                                        <label style={labelStyle} htmlFor="q-firstName">First Name *</label>
-                                        <input id="q-firstName" name="firstName" type="text" required
-                                            autoComplete="given-name"
-                                            placeholder="James"
-                                            value={form.firstName} onChange={onChange}
-                                            style={inputStyle}
-                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
-                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
-                                    </div>
-                                    <div>
-                                        <label style={labelStyle} htmlFor="q-phone">Phone *</label>
-                                        <input id="q-phone" name="phone" type="tel" required
-                                            autoComplete="tel"
-                                            placeholder="(919) 555-0123"
-                                            value={form.phone} onChange={onChange}
-                                            style={inputStyle}
-                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
-                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
-                                    </div>
-                                </div>
-                                {/* Row 2: Email + ZIP */}
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                                    <div>
-                                        <label style={labelStyle} htmlFor="q-email">Email *</label>
-                                        <input id="q-email" name="email" type="email" required
-                                            autoComplete="email"
-                                            placeholder="you@example.com"
-                                            value={form.email} onChange={onChange}
-                                            style={inputStyle}
-                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
-                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
-                                    </div>
-                                    <div>
-                                        <label style={labelStyle} htmlFor="q-zip">ZIP Code <span style={{ opacity: 0.45, fontWeight: 400 }}>(optional)</span></label>
-                                        <input id="q-zip" name="zip" type="text" inputMode="numeric" pattern="[0-9]*"
-                                            autoComplete="postal-code"
-                                            placeholder="27526"
-                                            value={form.zip} onChange={onChange}
-                                            style={inputStyle}
-                                            onFocus={e => e.target.style.borderColor = 'var(--amber)'}
-                                            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
-                                    </div>
-                                </div>
-                                {/* Row 3: Service */}
-                                <div>
-                                    <label style={labelStyle} htmlFor="q-service">Service Needed</label>
-                                    <select id="q-service" name="service" value={form.service} onChange={onChange} style={{ ...inputStyle }}>
-                                        <option value="">Select... (optional)</option>
-                                        {['Land Clearing', 'Brush Clearing', 'Fire Mitigation', 'Trail Cutting', 'Multiple / Not Sure'].map(s => <option key={s} value={s} style={{ background: 'var(--ink)' }}>{s}</option>)}
-                                    </select>
-                                </div>
-                                {/* Row 4: Notes */}
-                                <div>
-                                    <label style={labelStyle} htmlFor="q-notes">About Your Property</label>
-                                    <textarea id="q-notes" name="notes" rows={4}
-                                        placeholder="Acreage, type of growth, slope, access..."
-                                        value={form.notes} onChange={onChange}
-                                        style={{ ...inputStyle, resize: 'vertical', minHeight: '90px' }}
-                                        onFocus={e => e.target.style.borderColor = 'var(--amber)'}
-                                        onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'} />
-                                </div>
-                                <button type="submit" disabled={loading} style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '1rem', borderRadius: '6px', border: 'none', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.94rem', letterSpacing: '0.05em', textTransform: 'uppercase', cursor: 'pointer', transition: 'background 0.2s', opacity: loading ? 0.7 : 1 }}
-                                    onMouseEnter={e => !loading && (e.target.style.background = 'var(--gold)')} onMouseLeave={e => !loading && (e.target.style.background = 'var(--amber)')}>
-                                    {loading ? 'Sending...' : '🌲 Request My Free Quote'}
-                                </button>
-                                <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)', textAlign: 'center' }}>We respond same-day during business hours.</p>
-                            </form>
-                        )}
+                        <iframe
+                            src="https://link.marketing-titan.com/widget/form/yldRd4SpSbriS5oUgO1L"
+                            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px', minHeight: '1038px' }}
+                            id="inline-yldRd4SpSbriS5oUgO1L"
+                            data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow"
+                            data-trigger-value=""
+                            data-activation-type="alwaysActivated"
+                            data-activation-value=""
+                            data-deactivation-type="neverDeactivate"
+                            data-deactivation-value=""
+                            data-form-name="Clear Woods Crew - Quote RequestForm 9"
+                            data-height="1038"
+                            data-layout-iframe-id="inline-yldRd4SpSbriS5oUgO1L"
+                            data-form-id="yldRd4SpSbriS5oUgO1L"
+                            title="Clear Woods Crew - Quote RequestForm 9"
+                        ></iframe>
                     </div>
                 </div>
             </div>
