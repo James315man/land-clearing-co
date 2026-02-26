@@ -19,6 +19,7 @@ export default function Footer() {
                         <a href="tel:6419191107" className="footer__phone" id="footer-phone">
                             (641) 919-1107
                         </a>
+                        <p className="footer__address">📍 2935 Denson Road, Willow Spring, NC 27592</p>
                     </div>
 
                     <div className="footer__links-col">
@@ -58,7 +59,7 @@ export default function Footer() {
             <div className="footer__bottom">
                 <div className="container footer__bottom-inner">
                     <p>© {new Date().getFullYear()} Clear Woods Crew — Willow Spring, NC. All rights reserved.</p>
-                    <p className="footer__legal">Licensed & Fully Insured</p>
+                    <p className="footer__legal">Licensed &amp; Fully Insured · <a href="/privacy.html" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacy Policy</a></p>
                 </div>
             </div>
         </footer>
