@@ -359,6 +359,10 @@ img {
 /* ════════════════════════════════════
    FORM — 2-col grid stacks on mobile
 ═══════════════════════════════════════ */
+#quote-form {
+    scroll-margin-top: 85px;
+}
+
 @media (max-width: 780px) {
 
     /* Quote form inner grids collapse */

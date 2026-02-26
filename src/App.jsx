@@ -97,7 +97,7 @@ function Hero() {
 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem', alignItems: 'center' }}>
                     <PineTreeButton href="tel:6419191107" variant="call" id="hero-call">📞 Call (641) 919-1107</PineTreeButton>
-                    <PineTreeButton onClick={() => go('#quote')} id="hero-quote">Get a Free Quote →</PineTreeButton>
+                    <PineTreeButton onClick={() => go('#quote-form')} id="hero-quote">Get a Free Quote →</PineTreeButton>
                 </div>
 
                 <div style={{ display: 'flex', gap: '0', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', flexWrap: 'wrap' }}>
@@ -161,7 +161,7 @@ function Problem() {
                         <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#1a3a20', marginBottom: '2rem' }} className="reveal d4">
                             You've probably called around. Got vague quotes. Heard "burn pile." Wondered if you'd just live with it another year. <strong>You don't have to.</strong>
                         </p>
-                        <div className="reveal d5"><LiquidButton onClick={() => go('#quote')} size="lg">Fix It This Week →</LiquidButton></div>
+                        <div className="reveal d5"><LiquidButton onClick={() => go('#quote-form')} size="lg">Fix It This Week →</LiquidButton></div>
                     </div>
                     <div className="reveal d2" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                         {[
@@ -213,7 +213,7 @@ function Services() {
                             <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--amber)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.9rem' }}>{s.hook}</div>
                             <p style={{ fontSize: '0.92rem', color: 'rgba(240,250,242,0.65)', lineHeight: 1.72, marginBottom: '1.4rem' }}>{s.body}</p>
                             <button style={{ background: 'none', border: 'none', color: 'var(--gold)', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', padding: 0, fontFamily: 'var(--font-body)' }}
-                                onClick={() => go('#quote')}>Get a Quote for This →</button>
+                                onClick={() => go('#quote-form')}>Get a Quote for This →</button>
                         </div>
                     ))}
                 </div>
@@ -452,7 +452,7 @@ function Quote() {
                             ))}
                         </div>
                     </div>
-                    <div className="reveal d2">
+                    <div className="reveal d2" id="quote-form">
                         {done ? (
                             <div style={{ textAlign: 'center', padding: '4rem 2rem', background: 'rgba(39,174,96,0.1)', border: '1px solid rgba(39,174,96,0.25)', borderRadius: '10px' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
@@ -552,7 +552,7 @@ function Footer() {
                     </div>
                     {[
                         { title: 'Services', items: [{ l: 'Land Clearing', id: '#services' }, { l: 'Brush Clearing', id: '#services' }, { l: 'Fire Mitigation', id: '#services' }] },
-                        { title: 'Company', items: [{ l: 'How It Works', id: '#how-it-works' }, { l: 'Reviews', id: '#reviews' }, { l: 'FAQ', id: '#faq' }, { l: 'Get a Quote', id: '#quote' }] },
+                        { title: 'Company', items: [{ l: 'How It Works', id: '#how-it-works' }, { l: 'Reviews', id: '#reviews' }, { l: 'FAQ', id: '#faq' }, { l: 'Get a Quote', id: '#quote-form' }] },
                         { title: 'Service Area', items: [{ l: 'Willow Spring' }, { l: 'Fuquay-Varina' }, { l: 'Angier' }, { l: 'Benson' }, { l: 'Sanford' }, { l: 'Lillington' }] },
                     ].map(col => (
                         <div key={col.title}>
