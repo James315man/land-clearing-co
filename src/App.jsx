@@ -568,7 +568,11 @@ function Footer() {
                     ))}
                 </div>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.1rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)' }}>© {new Date().getFullYear()} Clear Woods Crew · Willow Spring, NC</p>
+                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                        <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)' }}>© {new Date().getFullYear()} Clear Woods Crew · Willow Spring, NC</p>
+                        <a href="/privacy.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Privacy Policy</a>
+                        <a href="/tos.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Terms of Service</a>
+                    </div>
                     <p style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--amber)' }}>Licensed & Fully Insured</p>
                 </div>
             </div>
