@@ -318,15 +318,19 @@ img {
         grid-template-columns: 1fr !important;
     }
 
-    /* Same for the 2fr / 1.4fr variants */
+    /* Same for the 2fr / 1.4fr variants — use kebab-case to match React's rendered HTML */
+    [style*="grid-template-columns: 2fr 1fr"],
+    [style*="grid-template-columns: 1fr 1.4fr"],
+    [style*="grid-template-columns: 1fr 2fr"],
+    [style*="grid-template-columns: 1fr 0.9fr"],
     [style*="gridTemplateColumns: '2fr 1fr'"],
     [style*="gridTemplateColumns: '1fr 1.4fr'"],
-    [style*="gridTemplateColumns: '1fr 2fr'"],
-    [style*="gridTemplateColumns: '1fr 0.9fr'"] {
+    [style*="gridTemplateColumns: '1fr 2fr'"] {
         grid-template-columns: 1fr !important;
     }
 
     /* Sticky aside cards: un-stick on mobile */
+    [style*="position: sticky"],
     [style*="position:'sticky'"],
     [style*="position: 'sticky'"] {
         position: static !important;
