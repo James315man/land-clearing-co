@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
+import { Routes, Route, Link, useLocation, useParams } from 'react-router-dom'
 import machineImg from './assets/machine.png'
 import beforeImg from './assets/before.png'
 import afterImg from './assets/after.png'
 import logoImg from './assets/logo.png'
 import LiquidButton from './components/LiquidButton'
 import PineTreeButton from './components/PineTreeButton'
+import ServicePage from './components/ServicePage'
+import servicesData from './data/services'
 import './index.css'
 
 function useReveal() {
@@ -136,7 +139,7 @@ function ProofBar() {
     return (
         <div style={{ background: 'var(--amber)', padding: '1rem 5vw' }}>
             <div style={{ maxWidth: '1160px', margin: '0 auto', display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                {['🚫 No burn piles', '🌿 Same-day clearing', '📋 Free property quotes', '🛡️ Licensed & insured', '📍 South Raleigh, NC'].map(t => (
+                {['🌳 96+ Acres Cleared & Trailed', '⭐ 5.0 Google Rating', '🚫 No Burn Piles', '🛡️ Licensed & Insured', '📍 Willow Spring, NC'].map(t => (
                     <span key={t} style={{ fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.05em', color: 'var(--ink)', textTransform: 'uppercase' }}>{t}</span>
                 ))}
             </div>
@@ -188,33 +191,35 @@ function Problem() {
 function Services() {
     const ref = useReveal()
     const svcs = [
-        { icon: '🌳', title: 'Land Clearing', hook: 'Raw land to ready land.', body: "Whether you're prepping acreage for livestock, building a home, or reclaiming what's yours — we clear it completely. Trees, brush, stumps, root mats. One pass with the mulcher and you've got usable ground. No hauling, no burning, no waiting." },
-        { icon: '🌿', title: 'Brush Clearing', hook: 'Kill the jungle for good.', body: "Honeysuckle, briars, scrub brush, invasive vines — our forestry mulcher chews through all of it. The mulched material works back into the soil, which is actually better for your land than burning ever was. Fast, thorough, done in a day." },
-        { icon: '🔥', title: 'Fire Mitigation', hook: 'Sleep easier tonight.', body: "Overgrown brush around your home or outbuildings is a liability. We create a defensible perimeter by removing the fuel — dead wood, dense undergrowth, ladder fuels — dropping your wildfire risk dramatically. No burn piles, no smoke, no fuss." },
+        { icon: '🌳', title: 'Land Clearing', slug: 'land-clearing', hook: 'Raw land to ready land.', body: "Whether you're prepping acreage for livestock, building a home, or reclaiming what's yours — we clear it completely. Trees, brush, stumps, root mats. One pass with the mulcher and you've got usable ground. No hauling, no burning, no waiting." },
+        { icon: '🌿', title: 'Brush Clearing', slug: 'brush-clearing', hook: 'Kill the jungle for good.', body: "Honeysuckle, briars, scrub brush, invasive vines — our forestry mulcher chews through all of it. The mulched material works back into the soil, which is actually better for your land than burning ever was. Fast, thorough, done in a day." },
+        { icon: '🔥', title: 'Fire Mitigation', slug: 'fire-mitigation', hook: 'Sleep easier tonight.', body: "Overgrown brush around your home or outbuildings is a liability. We create a defensible perimeter by removing the fuel — dead wood, dense undergrowth, ladder fuels — dropping your wildfire risk dramatically. No burn piles, no smoke, no fuss." },
+        { icon: '🌲', title: 'Forestry Mulching', slug: 'forestry-mulching', hook: 'Our core service.', body: "Our Bobcat T77 grinds brush, saplings, and trees up to 8 inches into clean organic mulch — right where it stands. No hauling, no burning. Your land ends up cleaner and healthier in a single day." },
+        { icon: '🥾', title: 'Trail Cutting', slug: 'trail-cutting', hook: '80 acres & counting.', body: "Need access through your property? We cut clean, usable trails through woods, fields, and overgrown areas. ATV trails, hiking paths, access roads — our mulcher creates a smooth path through anything." },
+        { icon: '🔗', title: 'Fence Line Clearing', slug: 'fence-line-clearing', hook: 'See your boundaries again.', body: "Can't see your fence? Property line swallowed by honeysuckle? We clear fence rows back to visibility — both sides — so you can maintain boundaries, contain livestock, and see what's yours." },
     ]
     return (
         <section id="services" className="section section--dark" ref={ref}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
                     <span className="eyebrow reveal">What We Do</span>
-                    <h2 className="headline reveal d2" style={{ color: 'var(--cream)' }}>Three Jobs.<br />One Machine. Done Right.</h2>
+                    <h2 className="headline reveal d2" style={{ color: 'var(--cream)' }}>Our Services.<br />One Machine. Done Right.</h2>
                     <p style={{ color: 'var(--sand)', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }} className="reveal d3">
                         No subcontractors. No middlemen. Just our Bobcat T77 with a professional forestry mulcher and a crew that takes pride in every job.
                     </p>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
                     {svcs.map((s, i) => (
-                        <div key={s.title} className={`reveal d${i + 2}`}
-                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '10px', padding: '2.5rem 2rem', transition: 'transform 0.3s,border-color 0.3s' }}
+                        <Link to={`/services/${s.slug}`} key={s.title} className={`reveal d${Math.min(i + 2, 6)}`}
+                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '10px', padding: '2.5rem 2rem', transition: 'transform 0.3s,border-color 0.3s', textDecoration: 'none', display: 'block' }}
                             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(46,204,95,0.3)' }}
                             onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)' }}>
                             <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{s.icon}</div>
                             <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.9rem', fontWeight: 800, color: 'var(--cream)', textTransform: 'uppercase', marginBottom: '0.2rem' }}>{s.title}</div>
                             <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--amber)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.9rem' }}>{s.hook}</div>
                             <p style={{ fontSize: '0.92rem', color: 'rgba(240,250,242,0.65)', lineHeight: 1.72, marginBottom: '1.4rem' }}>{s.body}</p>
-                            <button style={{ background: 'none', border: 'none', color: 'var(--gold)', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', padding: 0, fontFamily: 'var(--font-body)' }}
-                                onClick={() => go('#quote-form')}>Get a Quote for This →</button>
-                        </div>
+                            <span style={{ color: 'var(--gold)', fontWeight: 700, fontSize: '0.85rem', fontFamily: 'var(--font-body)' }}>Learn More →</span>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -351,6 +356,13 @@ function Reviews() {
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <span className="eyebrow reveal">Real Customers</span>
                     <h2 className="headline reveal d2" style={{ color: 'var(--ink)' }}>Straight From the Neighbors.</h2>
+                    <a href="https://g.page/r/CQu-ncYY5fKvEAI/review" target="_blank" rel="noopener noreferrer"
+                        className="reveal d3"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--ink)', color: 'var(--amber)', padding: '0.6rem 1.4rem', borderRadius: '50px', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.04em', marginTop: '1rem', transition: 'transform 0.2s, box-shadow 0.2s', textDecoration: 'none' }}
+                        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)' }}
+                        onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
+                        ⭐ 5.0 on Google — Read Our Reviews
+                    </a>
                 </div>
                 <div className="reveal" style={{ maxWidth: '740px', margin: '0 auto', background: 'var(--ink)', borderRadius: '12px', padding: '3rem', color: 'var(--cream)' }}>
                     <div style={{ color: 'var(--amber)', fontSize: '1.4rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>{'★'.repeat(reviews[idx].stars)}</div>
@@ -369,6 +381,12 @@ function Reviews() {
                         </div>
                     </div>
                 </div>
+                <div className="reveal d4" style={{ textAlign: 'center', marginTop: '2rem' }}>
+                    <a href="https://g.page/r/CQu-ncYY5fKvEAI/review" target="_blank" rel="noopener noreferrer"
+                        style={{ color: 'var(--ink)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                        Leave Us a Review on Google →
+                    </a>
+                </div>
             </div>
         </section>
     )
@@ -385,6 +403,12 @@ function FAQ() {
         { q: "How do you price jobs?", a: "By the job, not the hour. We look at your acreage, the density of what needs clearing, and any access challenges, then give you a flat quote. You'll know exactly what you're paying before we start." },
         { q: "Are you licensed and insured?", a: "Yes. Full liability insurance and proper licensing. We'll show proof before any work begins. You're getting a professional operation that covers you if anything goes sideways." },
         { q: "Can you work on steep or rough terrain?", a: "The Bobcat T77 compact track loader excels where wheeled equipment can't go. Slopes, wet ground, tight access — it handles all of it. If your property is a challenge, that's exactly what this machine is built for." },
+        { q: "How much does land clearing cost per acre in North Carolina?", a: "Costs vary based on brush density, terrain, and access. Light brush on flat ground costs less than dense honeysuckle on a slope. We give flat quotes — no hourly surprises. Call or fill out our form for a free estimate specific to your property in Wake, Johnston, or Harnett County." },
+        { q: "Do I need a permit to clear land in North Carolina?", a: "For most residential brush clearing and forestry mulching, no permit is required in Wake, Johnston, or Harnett counties. However, if your property is near wetlands, streams, or within a watershed buffer, you may need to check with your county. We're happy to help you figure that out before any work starts." },
+        { q: "What is forestry mulching and how is it different from bulldozing?", a: "Forestry mulching uses a specialized rotary drum attachment to grind vegetation into mulch right where it stands. Unlike bulldozing, there's no soil disturbance, no root ripping, no hauling, and no burn piles. The mulch stays on the ground, prevents erosion, and feeds nutrients back into the soil. It's faster, cleaner, and better for your land." },
+        { q: "What's the best time of year to clear land in NC?", a: "You can clear land year-round in North Carolina. Fall and winter are ideal because the ground is firmer and there's less regrowth pressure. But summer and spring work great too — especially for invasive species like honeysuckle and kudzu that are actively growing. The sooner you clear, the sooner you stop the spread." },
+        { q: "How long does it take to clear an acre?", a: "Most single-acre jobs are done in a few hours to a half day, depending on brush density. We've cleared 16 acres of dense brush and cut trails through 80 acres of river property — all completed on schedule. Larger projects may take a full day or two, but we'll give you a clear timeline upfront." },
+        { q: "What happens to the mulch after clearing?", a: "The mulched material stays right on your land. It forms a natural ground cover that prevents erosion, retains moisture, and decomposes over time to enrich the soil. Most customers love the look — it's clean, uniform, and actually makes your property healthier than burning ever would." },
     ]
     return (
         <section id="faq" className="section" style={{ background: 'white' }} ref={ref}>
@@ -478,7 +502,17 @@ function Footer() {
                         <a href="tel:6419191107" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--amber)' }}>(641) 919-1107</a>
                     </div>
                     {[
-                        { title: 'Services', items: [{ l: 'Land Clearing', id: '#services' }, { l: 'Brush Clearing', id: '#services' }, { l: 'Fire Mitigation', id: '#services' }] },
+                        {
+                            title: 'Services', items: [
+                                { l: 'Forestry Mulching', to: '/services/forestry-mulching' },
+                                { l: 'Land Clearing', to: '/services/land-clearing' },
+                                { l: 'Brush Clearing', to: '/services/brush-clearing' },
+                                { l: 'Trail Cutting', to: '/services/trail-cutting' },
+                                { l: 'Fire Mitigation', to: '/services/fire-mitigation' },
+                                { l: 'Lot Clearing', to: '/services/lot-clearing' },
+                                { l: 'Fence Line Clearing', to: '/services/fence-line-clearing' },
+                            ]
+                        },
                         { title: 'Company', items: [{ l: 'How It Works', id: '#how-it-works' }, { l: 'Reviews', id: '#reviews' }, { l: 'FAQ', id: '#faq' }, { l: 'Get a Quote', id: '#quote-form' }] },
                         { title: 'Service Area', items: [{ l: 'Willow Spring' }, { l: 'Fuquay-Varina' }, { l: 'Angier' }, { l: 'Benson' }, { l: 'Sanford' }, { l: 'Lillington' }] },
                     ].map(col => (
@@ -486,19 +520,28 @@ function Footer() {
                             <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(240,250,242,0.3)', marginBottom: '1rem' }}>{col.title}</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                 {col.items.map(item => (
-                                    <span key={item.l} onClick={() => item.id && document.querySelector(item.id)?.scrollIntoView({ behavior: 'smooth' })}
-                                        style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', cursor: item.id ? 'pointer' : 'default', transition: 'color 0.2s' }}
-                                        onMouseEnter={e => item.id && (e.target.style.color = 'var(--amber)')} onMouseLeave={e => item.id && (e.target.style.color = 'rgba(240,250,242,0.52)')}>{item.l}</span>
+                                    item.to ? (
+                                        <Link key={item.l} to={item.to}
+                                            style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', textDecoration: 'none', transition: 'color 0.2s' }}
+                                            onMouseEnter={e => e.target.style.color = 'var(--amber)'}
+                                            onMouseLeave={e => e.target.style.color = 'rgba(240,250,242,0.52)'}>{item.l}</Link>
+                                    ) : (
+                                        <span key={item.l} onClick={() => item.id && document.querySelector(item.id)?.scrollIntoView({ behavior: 'smooth' })}
+                                            style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', cursor: item.id ? 'pointer' : 'default', transition: 'color 0.2s' }}
+                                            onMouseEnter={e => item.id && (e.target.style.color = 'var(--amber)')}
+                                            onMouseLeave={e => item.id && (e.target.style.color = 'rgba(240,250,242,0.52)')}>{item.l}</span>
+                                    )
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.1rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
                         <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)' }}>© {new Date().getFullYear()} Clear Woods Crew · Willow Spring, NC</p>
                         <a href="/privacy.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Privacy Policy</a>
                         <a href="/tos.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Terms of Service</a>
+                        <a href="https://g.page/r/CQu-ncYY5fKvEAI/review" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.72rem', color: 'var(--gold)', textDecoration: 'underline' }}>⭐ Leave a Google Review</a>
                     </div>
                     <p style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--amber)' }}>Licensed & Fully Insured</p>
                 </div>
@@ -507,21 +550,37 @@ function Footer() {
     )
 }
 
+function HomePage() {
+    return (
+        <main>
+            <Hero />
+            <ProofBar />
+            <Problem />
+            <Services />
+            <HowItWorks />
+            <Results />
+            <Reviews />
+            <FAQ />
+            <Quote />
+        </main>
+    )
+}
+
+function ServiceRoute() {
+    const { slug } = useParams()
+    const service = servicesData[slug]
+    if (!service) return <div style={{ padding: '10rem 2rem', textAlign: 'center', background: 'var(--ink)', color: 'var(--cream)', minHeight: '80vh' }}><h1>Service not found</h1><Link to="/" style={{ color: 'var(--amber)' }}>← Back to Home</Link></div>
+    return <ServicePage service={service} />
+}
+
 export default function App() {
     return (
         <>
             <Navbar />
-            <main>
-                <Hero />
-                <ProofBar />
-                <Problem />
-                <Services />
-                <HowItWorks />
-                <Results />
-                <Reviews />
-                <FAQ />
-                <Quote />
-            </main>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/services/:slug" element={<ServiceRoute />} />
+            </Routes>
             <Footer />
         </>
     )

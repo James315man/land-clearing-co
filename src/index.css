@@ -297,6 +297,24 @@ img {
         height: 260px;
         object-position: 30% center;
     }
+
+    /* Service page hero: stack on mobile */
+    #service-hero {
+        flex-direction: column !important;
+        min-height: auto !important;
+    }
+
+    #service-hero > div:first-child {
+        flex: none !important;
+        width: 100% !important;
+        padding: 7rem 1.5rem 2.5rem !important;
+    }
+
+    #service-hero > div:last-child {
+        flex: none !important;
+        width: 100% !important;
+        height: 280px;
+    }
 }
 
 /* ════════════════════════════════════
