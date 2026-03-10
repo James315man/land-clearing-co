@@ -189,6 +189,11 @@
                 e.data.forEach(function (item) {
                     if (typeof item === 'string' && item.includes('form-submit')) {
                         isGHLSubmit = true;
+                    } else if (typeof item === 'object' && item !== null) {
+                        // Check inside objects inside the array
+                        if (item.type === 'form-submit' || item.message === 'form-submit') {
+                            isGHLSubmit = true;
+                        }
                     }
                 });
             }
