@@ -166,6 +166,33 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://link.marketing-titan.com/js/form_embed.js"></script>
+
+    <!-- GHL Form Submission Listener for Google Ads -->
+    <script>
+        window.addEventListener('message', function (e) {
+            // Log ALL messages to see what GHL is actually sending
+            console.log('Raw Message Data:', e.data);
+
+            // Sometimes GHL sends a string, sometimes an object
+            let isGHLSubmit = false;
+
+            if (typeof e.data === 'string' && e.data.includes('form-submit')) {
+                isGHLSubmit = true;
+            } else if (e.data && e.data.type === 'form-submit' && e.data.status === 'success') {
+                isGHLSubmit = true;
+            } else if (e.data && e.data.message === 'form-submit') {
+                isGHLSubmit = true;
+            }
+
+            if (isGHLSubmit) {
+                // Fire Google Ads Conversion
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-10966134348/XztoCM_smoYcEMzch-0o'
+                });
+                console.log('✅ GHL Form Submitted - Google Ads Conversion Fired');
+            }
+        });
+    </script>
 </body>
 
 </html>
