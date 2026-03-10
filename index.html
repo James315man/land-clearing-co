@@ -170,32 +170,28 @@
     <!-- GHL Form Submission Listener for Google Ads -->
     <script>
         window.addEventListener('message', function (e) {
-            // Log ALL messages to see what GHL is actually sending
-            console.log('Raw Message Data:', e.data);
+            // Safely stringify the data to see exactly what is inside the arrays/objects without clicking
+            try {
+                console.log('Raw Message:', e.data);
+                console.log('Stringified Message:', JSON.stringify(e.data));
+            } catch (err) { }
 
             let isGHLSubmit = false;
 
-            // Handle standard string or object payloads
-            if (typeof e.data === 'string' && e.data.includes('form-submit')) {
-                isGHLSubmit = true;
-            } else if (e.data && e.data.type === 'form-submit' && e.data.status === 'success') {
-                isGHLSubmit = true;
-            } else if (e.data && e.data.message === 'form-submit') {
-                isGHLSubmit = true;
-            }
+            // Convert everything to a string to easily search for submission keywords
+            let dataString = '';
+            try {
+                dataString = typeof e.data === 'string' ? e.data : JSON.stringify(e.data);
+            } catch (err) { }
 
-            // Handle iframe-resizer array payloads (from user screenshot)
-            if (Array.isArray(e.data)) {
-                e.data.forEach(function (item) {
-                    if (typeof item === 'string' && item.includes('form-submit')) {
-                        isGHLSubmit = true;
-                    } else if (typeof item === 'object' && item !== null) {
-                        // Check inside objects inside the array
-                        if (item.type === 'form-submit' || item.message === 'form-submit') {
-                            isGHLSubmit = true;
-                        }
-                    }
-                });
+            // GHL uses various keys depending on the form builder version:
+            // "form-submit", "form_submit", "ghl_form_submit", "SubmitApplication"
+            if (
+                dataString.includes('form-submit') ||
+                dataString.includes('form_submit') ||
+                dataString.includes('ghl_form_submit')
+            ) {
+                isGHLSubmit = true;
             }
 
             if (isGHLSubmit) {
