@@ -186,13 +186,15 @@
 
             // GHL uses various keys depending on the form builder version:
             // "form-submit", "form_submit", "ghl_form_submit", "SubmitApplication"
+            // For this specific GHL account config, it only broadcasts the customer data under "set-sticky-contacts"
             if (
                 dataString.includes('form-submit') ||
                 dataString.includes('form_submit') ||
                 dataString.includes('ghl_form_submit') ||
                 dataString.includes('SubmitApplication') ||
                 dataString.includes('"ghl_form_submit":true') ||
-                dataString.includes('actionType":"ghl_form_submit"')
+                dataString.includes('actionType":"ghl_form_submit"') ||
+                dataString.includes('set-sticky-contacts')
             ) {
                 isGHLSubmit = true;
             }
