@@ -190,7 +190,9 @@
                 dataString.includes('form-submit') ||
                 dataString.includes('form_submit') ||
                 dataString.includes('ghl_form_submit') ||
-                dataString.includes('SubmitApplication')
+                dataString.includes('SubmitApplication') ||
+                dataString.includes('"ghl_form_submit":true') ||
+                dataString.includes('actionType":"ghl_form_submit"')
             ) {
                 isGHLSubmit = true;
             }
