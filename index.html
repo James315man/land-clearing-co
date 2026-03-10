@@ -173,15 +173,24 @@
             // Log ALL messages to see what GHL is actually sending
             console.log('Raw Message Data:', e.data);
 
-            // Sometimes GHL sends a string, sometimes an object
             let isGHLSubmit = false;
 
+            // Handle standard string or object payloads
             if (typeof e.data === 'string' && e.data.includes('form-submit')) {
                 isGHLSubmit = true;
             } else if (e.data && e.data.type === 'form-submit' && e.data.status === 'success') {
                 isGHLSubmit = true;
             } else if (e.data && e.data.message === 'form-submit') {
                 isGHLSubmit = true;
+            }
+
+            // Handle iframe-resizer array payloads (from user screenshot)
+            if (Array.isArray(e.data)) {
+                e.data.forEach(function (item) {
+                    if (typeof item === 'string' && item.includes('form-submit')) {
+                        isGHLSubmit = true;
+                    }
+                });
             }
 
             if (isGHLSubmit) {
