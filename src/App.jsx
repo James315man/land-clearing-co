@@ -24,6 +24,19 @@ function useReveal() {
     return ref
 }
 
+function useHashScroll() {
+    const location = useLocation()
+    useEffect(() => {
+        if (location.hash) {
+            // Slight delay ensures the new page DOM has finished mounting
+            setTimeout(() => {
+                const el = document.querySelector(location.hash)
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }, 150)
+        }
+    }, [location])
+}
+
 function go(id) { document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
 
 /* ── NAVBAR ── */
@@ -574,6 +587,8 @@ function ServiceRoute() {
 }
 
 export default function App() {
+    useHashScroll()
+
     return (
         <>
             <Navbar />
