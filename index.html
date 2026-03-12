@@ -167,47 +167,20 @@
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://link.marketing-titan.com/js/form_embed.js"></script>
 
-    <!-- GHL Form Submission Listener for Google Ads -->
+    <!-- Lean GHL Lead Tracker (Single Trigger Guard) -->
     <script>
-        window.addEventListener('message', function (e) {
-            // Safely stringify the data to see exactly what is inside the arrays/objects without clicking
-            try {
-                console.log('Raw Message:', e.data);
-                console.log('Stringified Message:', JSON.stringify(e.data));
-            } catch (err) { }
-
-            let isGHLSubmit = false;
-
-            // Convert everything to a string to easily search for submission keywords
-            let dataString = '';
-            try {
-                dataString = typeof e.data === 'string' ? e.data : JSON.stringify(e.data);
-            } catch (err) { }
-
-            // GHL uses various keys depending on the form builder version:
-            // "form-submit", "form_submit", "ghl_form_submit", "SubmitApplication"
-            // For this specific GHL account config, it only broadcasts the customer data under "set-sticky-contacts"
-            if (
-                dataString.includes('form-submit') ||
-                dataString.includes('form_submit') ||
-                dataString.includes('ghl_form_submit') ||
-                dataString.includes('SubmitApplication') ||
-                dataString.includes('"ghl_form_submit":true') ||
-                dataString.includes('actionType":"ghl_form_submit"') ||
-                dataString.includes('set-sticky-contacts')
-            ) {
-                isGHLSubmit = true;
-            }
-
-            if (isGHLSubmit) {
-                // Fire Google Ads Conversion
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-10966134348/XztoCM_smoYcEMzch-0o'
-                });
-                console.log('✅ GHL Form Submitted - Google Ads Conversion Fired');
+        let hasConverted = false;
+        window.addEventListener('message', (e) => {
+            const msg = typeof e.data === 'string' ? e.data : JSON.stringify(e.data);
+            if (!hasConverted && (msg.includes('form-submit') || msg.includes('set-sticky-contacts'))) {
+                hasConverted = true;
+                gtag('event', 'conversion', { 'send_to': 'AW-10966134348/XztoCM_smoYcEMzch-0o' });
+                console.log('🚀 GHL Lead Captured - Google Ads Notified');
+                setTimeout(() => { hasConverted = false; }, 5000); // Reset for next session/reload
             }
         });
     </script>
+
 </body>
 
 </html>
