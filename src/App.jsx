@@ -490,12 +490,15 @@ function Quote() {
                             data-activation-value=""
                             data-deactivation-type="neverDeactivate"
                             data-deactivation-value=""
-                            data-form-name="Clear Woods Crew - Quote RequestForm 9"
+                            data-form-name="Clear Woods NC - Quote Request Form"
                             data-height="1038"
                             data-layout-iframe-id="inline-yldRd4SpSbriS5oUgO1L"
                             data-form-id="yldRd4SpSbriS5oUgO1L"
-                            title="Clear Woods Crew - Quote RequestForm 9"
+                            title="Clear Woods NC - Quote Request Form"
                         ></iframe>
+                        <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.38)', lineHeight: 1.6, marginTop: '0.75rem', padding: '0 0.25rem' }}>
+                            By submitting this form, you agree to receive SMS messages and/or calls from Clear Woods NC at the phone number provided. Message purpose: service quotes, scheduling, and business notifications. Message frequency varies. Message and data rates may apply. Reply <strong style={{ color: 'rgba(240,250,242,0.55)' }}>STOP</strong> to opt out at any time. Reply <strong style={{ color: 'rgba(240,250,242,0.55)' }}>HELP</strong> for assistance. View our <a href="/privacy.html" style={{ color: 'rgba(240,250,242,0.55)', textDecoration: 'underline' }}>Privacy Policy</a> and <a href="/tos.html" style={{ color: 'rgba(240,250,242,0.55)', textDecoration: 'underline' }}>Terms of Service</a>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -510,7 +513,7 @@ function Footer() {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '2.5rem' }}>
                     <div>
-                        <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--cream)', marginBottom: '0.7rem', fontFamily: 'var(--font-body)' }}>🌲 <span style={{ color: 'var(--amber)' }}>Clear Woods</span> Crew</div>
+                        <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--cream)', marginBottom: '0.7rem', fontFamily: 'var(--font-body)' }}>🌲 <span style={{ color: 'var(--amber)' }}>Clear Woods</span> NC</div>
                         <p style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.42)', lineHeight: 1.65, marginBottom: '1rem', maxWidth: '270px' }}>Professional land clearing, brush clearing & fire mitigation — south Raleigh, NC. No burn piles.</p>
                         <a href="tel:6419191107" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--amber)' }}>(641) 919-1107</a>
                     </div>
@@ -551,7 +554,7 @@ function Footer() {
                 </div>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.1rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)' }}>© {new Date().getFullYear()} Clear Woods Crew · Willow Spring, NC</p>
+                        <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.28)' }}>© {new Date().getFullYear()} Clear Woods NC · Willow Spring, NC</p>
                         <a href="/privacy.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Privacy Policy</a>
                         <a href="/tos.html" style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.4)', textDecoration: 'underline' }}>Terms of Service</a>
                         <a href="https://g.page/r/CQu-ncYY5fKvEAI/review" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.72rem', color: 'var(--gold)', textDecoration: 'underline' }}>⭐ Leave a Google Review</a>
