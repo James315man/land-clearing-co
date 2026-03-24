@@ -496,9 +496,6 @@ function Quote() {
                             data-form-id="yldRd4SpSbriS5oUgO1L"
                             title="Clear Woods Crew - Quote RequestForm 9"
                         ></iframe>
-                        <p style={{ fontSize: '0.72rem', color: 'rgba(240,250,242,0.38)', lineHeight: 1.6, marginTop: '0.75rem', padding: '0 0.25rem' }}>
-                            By submitting this form, you agree to receive SMS messages and/or calls from Clear Woods Crew at the phone number provided. Message purpose: service quotes, scheduling, and business notifications. Message frequency varies. Message and data rates may apply. Reply <strong style={{ color: 'rgba(240,250,242,0.55)' }}>STOP</strong> to opt out at any time. Reply <strong style={{ color: 'rgba(240,250,242,0.55)' }}>HELP</strong> for assistance. View our <a href="/privacy.html" style={{ color: 'rgba(240,250,242,0.55)', textDecoration: 'underline' }}>Privacy Policy</a> and <a href="/tos.html" style={{ color: 'rgba(240,250,242,0.55)', textDecoration: 'underline' }}>Terms of Service</a>.
-                        </p>
                     </div>
                 </div>
             </div>
