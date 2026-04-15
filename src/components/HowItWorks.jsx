@@ -6,7 +6,7 @@ const steps = [
         number: '01',
         title: 'Request Your Free Quote',
         description:
-            'Call us at (641) 919-1107 or fill out our quick form below. Tell us where your property is, what you\'re dealing with, and how much land needs clearing. We\'ll get back to you fast — no runaround.',
+            'Call us at (984) 230-1426 or fill out our quick form below. Tell us where your property is, what you\'re dealing with, and how much land needs clearing. We\'ll get back to you fast — no runaround.',
         icon: '📞',
     },
     {
@@ -56,7 +56,7 @@ export default function HowItWorks() {
                 </div>
 
                 <div className="hiw__cta fade-up">
-                    <a href="tel:6419191107" className="btn btn-primary btn-lg" id="hiw-cta">
+                    <a href="tel:9842301426" className="btn btn-primary btn-lg" id="hiw-cta">
                         📞 Start With a Free Call
                     </a>
                 </div>

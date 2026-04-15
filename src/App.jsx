@@ -64,9 +64,9 @@ function Navbar() {
                     <button key={l} onClick={() => nav(id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(240,250,242,0.72)', fontSize: '0.85rem', fontWeight: 500, fontFamily: 'var(--font-body)', transition: 'color 0.2s' }}
                         onMouseEnter={e => e.target.style.color = 'var(--gold)'} onMouseLeave={e => e.target.style.color = 'rgba(240,250,242,0.72)'}>{l}</button>
                 ))}
-                <a href="tel:6419191107" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.65rem 1.4rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.83rem', letterSpacing: '0.04em', textTransform: 'uppercase', transition: 'background 0.2s', whiteSpace: 'nowrap' }}
+                <a href="tel:9842301426" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.65rem 1.4rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.83rem', letterSpacing: '0.04em', textTransform: 'uppercase', transition: 'background 0.2s', whiteSpace: 'nowrap' }}
                     onMouseEnter={e => e.currentTarget.style.background = 'var(--gold)'} onMouseLeave={e => e.currentTarget.style.background = 'var(--amber)'}>
-                    Call (641) 919-1107
+                    Call (984) 230-1426
                 </a>
             </div>
             {/* Hamburger — visible on mobile via CSS */}
@@ -81,7 +81,7 @@ function Navbar() {
                     {[['Services', '#services'], ['How It Works', '#how-it-works'], ['Results', '#results'], ['FAQ', '#faq']].map(([l, id]) => (
                         <button key={l} onClick={() => nav(id)} style={{ background: 'none', border: 'none', color: 'var(--cream)', fontSize: '1rem', fontFamily: 'var(--font-body)', padding: '0.5rem 0', textAlign: 'left', cursor: 'pointer', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>{l}</button>
                     ))}
-                    <a href="tel:6419191107" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.9rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.9rem', textAlign: 'center', letterSpacing: '0.04em', textTransform: 'uppercase' }}>📞 Call (641) 919-1107</a>
+                    <a href="tel:9842301426" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '0.9rem', borderRadius: '4px', fontWeight: 700, fontSize: '0.9rem', textAlign: 'center', letterSpacing: '0.04em', textTransform: 'uppercase' }}>📞 Call (984) 230-1426</a>
                 </div>
             )}
         </nav>
@@ -112,7 +112,7 @@ function Hero() {
                 </p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem', alignItems: 'center' }}>
-                    <PineTreeButton href="tel:6419191107" variant="call" id="hero-call">📞 Call (641) 919-1107</PineTreeButton>
+                    <PineTreeButton href="tel:9842301426" variant="call" id="hero-call">📞 Call (984) 230-1426</PineTreeButton>
                     <PineTreeButton onClick={() => go('#quote-form')} id="hero-quote">Get a Free Quote →</PineTreeButton>
                 </div>
 
@@ -244,7 +244,7 @@ function Services() {
 function HowItWorks() {
     const ref = useReveal()
     const steps = [
-        { n: '01', title: 'You Call or Text', body: "Reach us at (641) 919-1107 or drop your info in the form. Tell us where the property is, roughly how much needs clearing, and what you're dealing with. Takes 2 minutes." },
+        { n: '01', title: 'You Call or Text', body: "Reach us at (984) 230-1426 or drop your info in the form. Tell us where the property is, roughly how much needs clearing, and what you're dealing with. Takes 2 minutes." },
         { n: '02', title: 'We Quote It Fast', body: "We'll review your property and get you a straight answer — no fluff, no upsell. Just a real number for real work. Most quotes come back same day." },
         { n: '03', title: 'We Show Up & Clear It', body: "The Bobcat T77 rolls on, the forestry mulcher gets to work, and by end of day you have cleared, usable land. No burn pile smoldering for a week. No hauling. Just results." },
     ]
@@ -269,7 +269,7 @@ function HowItWorks() {
                             </div>
                         ))}
                         <div style={{ marginTop: '3rem' }} className="reveal">
-                            <LiquidButton href="tel:6419191107" variant="call" size="lg">📞 Start With a Call</LiquidButton>
+                            <LiquidButton href="tel:9842301426" variant="call" size="lg">📞 Start With a Call</LiquidButton>
                         </div>
                     </div>
                     {/* Why no burn pile sticky */}
@@ -433,7 +433,7 @@ function FAQ() {
                         <p style={{ color: '#2a5032', lineHeight: 1.7, marginBottom: '2rem', fontSize: '1rem' }} className="reveal d3">
                             We hear the same questions on every call. Here's what you need to know before you pick up the phone.
                         </p>
-                        <a href="tel:6419191107" className="btn btn-amber btn-lg reveal d4">📞 Just Call Us</a>
+                        <a href="tel:9842301426" className="btn btn-amber btn-lg reveal d4">📞 Just Call Us</a>
                     </div>
                     <div className="reveal d2" style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                         {faqs.map((f, i) => (
@@ -468,7 +468,7 @@ function Quote() {
                             Takes 2 minutes. Tell us where you are and what you're dealing with. We'll get back to you fast with a real number.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} className="reveal d4">
-                            <a href="tel:6419191107" style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--amber)', fontFamily: 'var(--font-body)' }}>(641) 919-1107</a>
+                            <a href="tel:9842301426" style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--amber)', fontFamily: 'var(--font-body)' }}>(984) 230-1426</a>
                             <div style={{ fontSize: '0.875rem', color: 'rgba(240,250,242,0.45)' }}>📍 Willow Spring, NC — Serving south Raleigh & surrounding areas</div>
                             <div style={{ fontSize: '0.875rem', color: 'rgba(240,250,242,0.45)' }}>🕐 Mon–Sat, 7am–6pm</div>
                         </div>
@@ -515,7 +515,7 @@ function Footer() {
                     <div>
                         <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--cream)', marginBottom: '0.7rem', fontFamily: 'var(--font-body)' }}>🌲 <span style={{ color: 'var(--amber)' }}>Clear Woods</span> NC</div>
                         <p style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.42)', lineHeight: 1.65, marginBottom: '1rem', maxWidth: '270px' }}>Professional land clearing, brush clearing & fire mitigation — south Raleigh, NC. No burn piles.</p>
-                        <a href="tel:6419191107" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--amber)' }}>(641) 919-1107</a>
+                        <a href="tel:9842301426" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--amber)' }}>(984) 230-1426</a>
                     </div>
                     {[
                         {

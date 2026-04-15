@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         q: 'How do I get a quote?',
-        a: 'Easy — call us at (641) 919-1107 or fill out the quick form below. Just tell us your location, a rough estimate of the acreage or area, and what you\'re dealing with. We respond fast and give honest, no-BS estimates.',
+        a: 'Easy — call us at (984) 230-1426 or fill out the quick form below. Just tell us your location, a rough estimate of the acreage or area, and what you\'re dealing with. We respond fast and give honest, no-BS estimates.',
     },
 ]
 

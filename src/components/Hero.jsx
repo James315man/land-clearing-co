@@ -37,11 +37,11 @@ export default function Hero() {
 
                 <div className="hero__actions">
                     <a
-                        href="tel:6419191107"
+                        href="tel:9842301426"
                         className="btn btn-primary btn-lg"
                         id="hero-cta-call"
                     >
-                        📞 Call (641) 919-1107
+                        📞 Call (984) 230-1426
                     </a>
                     <button
                         className="btn btn-outline btn-lg"

@@ -42,14 +42,14 @@ export default function Navbar() {
                         </li>
                     ))}
                     <li className="navbar__cta-mobile">
-                        <a href="tel:6419191107" className="btn btn-primary">
-                            Call (641) 919-1107
+                        <a href="tel:9842301426" className="btn btn-primary">
+                            Call (984) 230-1426
                         </a>
                     </li>
                 </ul>
 
-                <a href="tel:6419191107" className="btn btn-primary navbar__cta" aria-label="Call us">
-                    Call (641) 919-1107
+                <a href="tel:9842301426" className="btn btn-primary navbar__cta" aria-label="Call us">
+                    Call (984) 230-1426
                 </a>
 
                 <button

@@ -80,8 +80,8 @@ export default function Gallery() {
 
                 <div className="gallery__cta fade-up">
                     <p>Ready to see this kind of transformation on <em>your</em> property?</p>
-                    <a href="tel:6419191107" className="btn btn-primary btn-lg" id="gallery-cta">
-                        📞 Call (641) 919-1107
+                    <a href="tel:9842301426" className="btn btn-primary btn-lg" id="gallery-cta">
+                        📞 Call (984) 230-1426
                     </a>
                 </div>
             </div>

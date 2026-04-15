@@ -16,8 +16,8 @@ export default function Footer() {
                         <p className="footer__tagline">
                             Professional land clearing, brush clearing & fire mitigation — serving the south Raleigh, NC corridor with a Bobcat S77 mulching machine. No burn piles. Ever.
                         </p>
-                        <a href="tel:6419191107" className="footer__phone" id="footer-phone">
-                            (641) 919-1107
+                        <a href="tel:9842301426" className="footer__phone" id="footer-phone">
+                            (984) 230-1426
                         </a>
                         <p className="footer__address">📍 2935 Denson Road, Willow Spring, NC 27592</p>
                     </div>

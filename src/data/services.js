@@ -6,7 +6,7 @@ const services = {
         eyebrow: 'Our Core Service',
         headline: 'Forestry Mulching in Wake, Johnston & Harnett Counties',
         metaTitle: 'Forestry Mulching | Wake, Johnston & Harnett County NC | Clear Woods NC',
-        metaDescription: 'Professional forestry mulching in Wake, Johnston & Harnett counties, NC. Bobcat T77 mulcher grinds brush, saplings & small trees into organic mulch in one pass. No burning, no hauling. Call (641) 919-1107.',
+        metaDescription: 'Professional forestry mulching in Wake, Johnston & Harnett counties, NC. Bobcat T77 mulcher grinds brush, saplings & small trees into organic mulch in one pass. No burning, no hauling. Call (984) 230-1426.',
         heroDescription: 'Our Bobcat T77 forestry mulcher grinds brush, saplings, and trees up to 8 inches into clean organic mulch — right where it stands. No hauling. No burn piles. Your land ends up cleaner and healthier in a single day.',
         contentHeadline: 'The Smart Way to Reclaim Your Land.',
         contentBody: [
@@ -39,7 +39,7 @@ const services = {
         eyebrow: 'Kill The Jungle',
         headline: 'Brush Clearing Services in Willow Spring & Surrounding NC',
         metaTitle: 'Brush Clearing | Willow Spring, Fuquay-Varina & Angier NC | Clear Woods NC',
-        metaDescription: 'Professional brush clearing in Willow Spring, Fuquay-Varina, Angier & surrounding NC areas. We eliminate honeysuckle, briars, kudzu & invasive brush. No burn piles. Call (641) 919-1107.',
+        metaDescription: 'Professional brush clearing in Willow Spring, Fuquay-Varina, Angier & surrounding NC areas. We eliminate honeysuckle, briars, kudzu & invasive brush. No burn piles. Call (984) 230-1426.',
         heroDescription: "Honeysuckle, briars, kudzu, invasive vines — our forestry mulcher chews through all of it. The mulched material works back into the soil, which is better for your land than burning ever was. Fast, thorough, done in a day.",
         contentHeadline: 'Your Property Is Disappearing. We Take It Back.',
         contentBody: [
@@ -71,7 +71,7 @@ const services = {
         eyebrow: 'Raw Land to Ready Land',
         headline: 'Land Clearing in Wake, Johnston & Harnett Counties NC',
         metaTitle: 'Land Clearing | Wake, Johnston & Harnett County NC | Clear Woods NC',
-        metaDescription: 'Professional land clearing in Wake, Johnston & Harnett counties, NC. Full property clearing for construction, farming, pasture & development. Bobcat T77 forestry mulcher — no burn piles. Call (641) 919-1107.',
+        metaDescription: 'Professional land clearing in Wake, Johnston & Harnett counties, NC. Full property clearing for construction, farming, pasture & development. Bobcat T77 forestry mulcher — no burn piles. Call (984) 230-1426.',
         heroDescription: "Whether you're prepping acreage for livestock, building a home, or reclaiming what's yours — we clear it completely. Trees, brush, stumps, root mats. One pass with the mulcher and you've got usable ground.",
         contentHeadline: 'From Overgrown to Usable. One Day.',
         contentBody: [
@@ -103,7 +103,7 @@ const services = {
         eyebrow: 'Build-Ready Lots',
         headline: 'Lot Clearing for Home Builders & Developers in NC',
         metaTitle: 'Lot Clearing for Builders | Raleigh, Fuquay-Varina & Clayton NC | Clear Woods NC',
-        metaDescription: 'Professional lot clearing for home builders and developers in Wake, Johnston & Harnett counties, NC. Build-ready sites with no burn piles. Bobcat T77 forestry mulcher. Call (641) 919-1107.',
+        metaDescription: 'Professional lot clearing for home builders and developers in Wake, Johnston & Harnett counties, NC. Build-ready sites with no burn piles. Bobcat T77 forestry mulcher. Call (984) 230-1426.',
         heroDescription: "Need a lot cleared and build-ready? We process all vegetation on-site, preserve trees you want to keep, and leave clean ground ready for grading — without destroying your topsoil or leaving burn piles for weeks.",
         contentHeadline: 'Build-Ready. No Burn Pile. No Wait.',
         contentBody: [
@@ -134,7 +134,7 @@ const services = {
         eyebrow: 'See Your Boundaries Again',
         headline: 'Fence Line Clearing in Wake & Johnston County NC',
         metaTitle: 'Fence Line Clearing | Wake & Johnston County NC | Clear Woods NC',
-        metaDescription: 'Professional fence line clearing in Wake & Johnston counties, NC. Clear overgrown fence rows, property lines & boundaries. Bobcat T77 mulcher. No burn piles. Call (641) 919-1107.',
+        metaDescription: 'Professional fence line clearing in Wake & Johnston counties, NC. Clear overgrown fence rows, property lines & boundaries. Bobcat T77 mulcher. No burn piles. Call (984) 230-1426.',
         heroDescription: "Can't see your fence? Property line swallowed by honeysuckle and briars? We clear fence rows back to visibility — both sides — so you can maintain your boundaries, contain livestock, and see what's yours again.",
         contentHeadline: 'Your Fence Line Disappeared. We Find It.',
         contentBody: [
@@ -165,7 +165,7 @@ const services = {
         eyebrow: '80 Acres & Counting',
         headline: 'Trail Cutting Services in North Carolina',
         metaTitle: 'Trail Cutting | ATV, Hiking & Property Trails NC | Clear Woods NC',
-        metaDescription: 'Professional trail cutting through woods and fields in Wake, Johnston & Harnett counties NC. ATV trails, hiking paths & property access. Bobcat T77 mulcher. Call (641) 919-1107.',
+        metaDescription: 'Professional trail cutting through woods and fields in Wake, Johnston & Harnett counties NC. ATV trails, hiking paths & property access. Bobcat T77 mulcher. Call (984) 230-1426.',
         heroDescription: "Need access through your property? We cut clean, usable trails through woods, fields, and overgrown areas. ATV trails, hiking paths, access roads to back acreage — our mulcher creates a smooth path through anything.",
         contentHeadline: 'Open Up Your Property. Trail by Trail.',
         contentBody: [
@@ -197,7 +197,7 @@ const services = {
         eyebrow: 'Sleep Easier Tonight',
         headline: 'Fire Mitigation & Defensible Space in NC',
         metaTitle: 'Fire Mitigation & Brush Removal | Wake & Johnston County NC | Clear Woods NC',
-        metaDescription: 'Fire mitigation and defensible space clearing in Wake, Johnston & Harnett counties NC. Remove dead wood, dense brush & fuel loads around your home. No burn piles. Call (641) 919-1107.',
+        metaDescription: 'Fire mitigation and defensible space clearing in Wake, Johnston & Harnett counties NC. Remove dead wood, dense brush & fuel loads around your home. No burn piles. Call (984) 230-1426.',
         heroDescription: "Overgrown brush around your home or outbuildings is a liability. We create a defensible perimeter by removing the fuel — dead wood, dense undergrowth, ladder fuels — dropping your wildfire risk dramatically.",
         contentHeadline: 'Remove the Fuel. Protect What Matters.',
         contentBody: [

@@ -98,7 +98,7 @@ export default function ServicePage({ service }) {
                             </p>
 
                             <div className="reveal d4" style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap' }}>
-                                <a href="tel:6419191107" className="btn btn-amber btn-lg">📞 Call (641) 919-1107</a>
+                                <a href="tel:9842301426" className="btn btn-amber btn-lg">📞 Call (984) 230-1426</a>
                                 <Link to="/#quote-form" className="btn btn-outline-w btn-lg">Get a Free Quote →</Link>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ export default function ServicePage({ service }) {
                                     ))}
                                 </div>
                                 <div className="reveal d4">
-                                    <LiquidButton href="tel:6419191107" variant="call" size="lg">📞 Talk to Us</LiquidButton>
+                                    <LiquidButton href="tel:9842301426" variant="call" size="lg">📞 Talk to Us</LiquidButton>
                                 </div>
                             </div>
 
@@ -168,7 +168,7 @@ export default function ServicePage({ service }) {
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                             {[
-                                { n: '01', title: 'You Call or Text', body: 'Reach us at (641) 919-1107 or fill out our quote form. Tell us what you need cleared.' },
+                                { n: '01', title: 'You Call or Text', body: 'Reach us at (984) 230-1426 or fill out our quote form. Tell us what you need cleared.' },
                                 { n: '02', title: 'We Quote It', body: "We review your property, assess the density and terrain, and give you a straight number — usually same day." },
                                 { n: '03', title: 'We Clear It', body: 'Our Bobcat T77 rolls on, the forestry mulcher gets to work, and by end of day you have usable land. No burn piles.' },
                             ].map((s, i) => (
@@ -201,7 +201,7 @@ export default function ServicePage({ service }) {
                                 <p style={{ color: '#2a5032', lineHeight: 1.7, marginBottom: '2rem', fontSize: '1rem' }} className="reveal d3">
                                     Quick answers about {service.title.toLowerCase()} in Wake, Johnston & Harnett counties.
                                 </p>
-                                <a href="tel:6419191107" className="btn btn-amber btn-lg reveal d4">📞 Just Call Us</a>
+                                <a href="tel:9842301426" className="btn btn-amber btn-lg reveal d4">📞 Just Call Us</a>
                             </div>
                             <div className="reveal d2" style={{ display: 'flex', flexDirection: 'column' }}>
                                 {service.faqs.map((f, i) => (
@@ -260,7 +260,7 @@ export default function ServicePage({ service }) {
                             Takes 2 minutes. Tell us where you are and what you're dealing with — we'll get back to you fast with a real number.
                         </p>
                         <div className="reveal d4" style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <a href="tel:6419191107" className="btn btn-amber btn-lg">📞 Call (641) 919-1107</a>
+                            <a href="tel:9842301426" className="btn btn-amber btn-lg">📞 Call (984) 230-1426</a>
                             <Link to="/#quote-form" className="btn btn-outline-dark btn-lg">Get a Quote Online →</Link>
                         </div>
                     </div>
