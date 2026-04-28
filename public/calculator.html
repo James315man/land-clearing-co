@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instant Price Estimate | Clear Woods NC | Forestry Mulching Johnston County</title>
+<meta name="description" content="Get an instant forestry mulching price estimate for your property in Johnston County, NC. Clear Woods NC — free quotes, fast results.">
+<link rel="canonical" href="https://clearwoodsnc.com/instant-pricing">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#0a0f1a;color:#e2e8f0;min-height:100vh}
+.hero{background:linear-gradient(135deg,#0a2a1a,#0a0f1a);padding:40px 24px 28px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06)}
+.badge{display:inline-block;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px}
+.hero h1{font-size:clamp(26px,5vw,42px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:10px}
+.hero h1 span{color:#4ade80}
+.hero p{color:#94a3b8;font-size:15px;max-width:480px;margin:0 auto}
+.wrap{max-width:640px;margin:0 auto;padding:36px 20px 80px}
+.step-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;color:#64748b}
+.bar{height:4px;background:rgba(255,255,255,0.08);border-radius:4px;margin-bottom:36px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#16a34a,#4ade80);border-radius:4px;transition:width .4s ease}
+.step{display:none;animation:fi .3s ease}
+.step.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:6px}
+.step p{font-size:13px;color:#64748b;margin-bottom:24px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:24px}
+.opt{background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 14px;cursor:pointer;text-align:center;transition:all .2s;user-select:none}
+.opt:hover{border-color:rgba(74,222,128,0.4);background:rgba(74,222,128,0.05)}
+.opt.sel{border-color:#4ade80;background:rgba(74,222,128,0.1)}
+.opt i{font-size:26px;display:block;margin-bottom:6px}
+.opt b{font-size:13px;font-weight:700;color:#fff;display:block;margin-bottom:2px}
+.opt small{font-size:11px;color:#64748b}
+.acre-num{font-size:52px;font-weight:900;color:#4ade80;text-align:center;margin-bottom:6px;letter-spacing:-2px}
+.acre-num span{font-size:18px;font-weight:400;color:#64748b}
+input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:6px;background:rgba(255,255,255,0.1);outline:none;margin:8px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#4ade80;cursor:pointer;box-shadow:0 0 10px rgba(74,222,128,0.5)}
+.sl-labels{display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-top:4px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:13px;font-weight:600;color:#94a3b8;margin-bottom:5px}
+.fg input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-size:16px;color:#fff;font-family:inherit;outline:none;transition:border-color .2s}
+.fg input:focus{border-color:#4ade80}
+.fg input::placeholder{color:#475569}
+.btn{width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;border:none;border-radius:12px;padding:17px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:6px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,0.35)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.back{background:none;border:1px solid rgba(255,255,255,0.1);color:#94a3b8;border-radius:8px;padding:9px 18px;font-size:13px;cursor:pointer;font-family:inherit;margin-top:10px}
+.back:hover{border-color:rgba(255,255,255,0.3);color:#fff}
+.res-card{background:rgba(74,222,128,0.08);border:2px solid rgba(74,222,128,0.3);border-radius:16px;padding:28px;text-align:center;margin-bottom:20px}
+.res-tag{font-size:11px;color:#4ade80;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.res-price{font-size:clamp(34px,8vw,52px);font-weight:900;color:#fff;letter-spacing:-2px;margin-bottom:6px}
+.res-note{font-size:13px;color:#64748b}
+.breakdown{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;margin-bottom:20px}
+.brow{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.brow:last-child{border-bottom:none}
+.brow .k{color:#94a3b8}
+.brow .v{font-weight:600}
+.cta-call{display:block;text-align:center;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;text-decoration:none;border-radius:12px;padding:17px;font-size:16px;font-weight:700;margin-bottom:10px;transition:all .2s}
+.cta-call:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,0.35)}
+.disc{font-size:12px;color:#475569;text-align:center;line-height:1.6;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">Free Estimate — No Obligation</div>
+  <h1>What Will Your Job <span>Actually Cost?</span></h1>
+  <p>5 quick questions. Real price range in 60 seconds. Johnston County's trusted forestry mulching crew.</p>
+</div>
+<div class="wrap">
+  <div class="step-info"><span>Step <span id="sn">1</span> of 5</span><span id="spct">20% complete</span></div>
+  <div class="bar"><div class="fill" id="fill" style="width:20%"></div></div>
+
+  <div class="step active" id="s1">
+    <h2>What type of property?</h2>
+    <p>Helps us understand scope and equipment needed.</p>
+    <div class="opts">
+      <div class="opt" data-s="1" data-v="residential"><i>🏡</i><b>Residential</b><small>Home lot or yard</small></div>
+      <div class="opt" data-s="1" data-v="rural"><i>🌾</i><b>Rural / Farm</b><small>Pasture or ag land</small></div>
+      <div class="opt" data-s="1" data-v="commercial"><i>🏗️</i><b>Commercial</b><small>Dev or business lot</small></div>
+      <div class="opt" data-s="1" data-v="recreational"><i>🌲</i><b>Recreational</b><small>Hunting or trails</small></div>
+    </div>
+    <button class="btn" id="n1" disabled onclick="go(2)">Continue →</button>
+  </div>
+
+  <div class="step" id="s2">
+    <h2>How many acres need clearing?</h2>
+    <p>Estimate is fine — we confirm on site.</p>
+    <div class="acre-num"><span id="av">1</span> <span id="au">acre</span></div>
+    <input type="range" id="asl" min="0" max="20" step="0.25" value="1" oninput="uAcre(this.value)">
+    <div class="sl-labels"><span>¼ acre</span><span>5 acres</span><span>10+ acres</span></div>
+    <button class="btn" style="margin-top:20px" onclick="go(3)">Continue →</button>
+    <button class="back" onclick="go(1)">← Back</button>
+  </div>
+
+  <div class="step" id="s3">
+    <h2>How thick is the vegetation?</h2>
+    <p>Be honest — it helps us give you the most accurate estimate.</p>
+    <div class="opts">
+      <div class="opt" data-s="3" data-v="light"><i>🌿</i><b>Light Brush</b><small>Grass, weeds, shrubs</small></div>
+      <div class="opt" data-s="3" data-v="moderate"><i>🌳</i><b>Moderate</b><small>Mixed brush, saplings</small></div>
+      <div class="opt" data-s="3" data-v="heavy"><i>🪵</i><b>Heavy / Dense</b><small>Thick brush, small trees</small></div>
+      <div class="opt" data-s="3" data-v="trees"><i>🌲</i><b>Large Trees</b><small>Mature timber, fallen logs</small></div>
+    </div>
+    <button class="btn" id="n3" disabled onclick="go(4)">Continue →</button>
+    <button class="back" onclick="go(2)">← Back</button>
+  </div>
+
+  <div class="step" id="s4">
+    <h2>What's the terrain like?</h2>
+    <p>Slopes and wet ground affect access time and equipment.</p>
+    <div class="opts">
+      <div class="opt" data-s="4" data-v="flat"><i>➡️</i><b>Flat</b><small>Level, easy access</small></div>
+      <div class="opt" data-s="4" data-v="gentle"><i>📐</i><b>Gentle Slope</b><small>Slight grade, accessible</small></div>
+      <div class="opt" data-s="4" data-v="steep"><i>⛰️</i><b>Steep / Hilly</b><small>Significant slopes</small></div>
+      <div class="opt" data-s="4" data-v="wet"><i>💧</i><b>Wet / Boggy</b><small>Drainage issues, creek areas</small></div>
+    </div>
+    <button class="btn" id="n4" disabled onclick="go(5)">Continue →</button>
+    <button class="back" onclick="go(3)">← Back</button>
+  </div>
+
+  <div class="step" id="s5">
+    <h2>Where do we send your estimate?</h2>
+    <p>We'll text you a firm quote within 1 hour during business hours.</p>
+    <div class="fg"><label>Your Name</label><input type="text" id="cname" placeholder="First & Last Name" oninput="chk()"></div>
+    <div class="fg"><label>Phone Number</label><input type="tel" id="cphone" placeholder="(919) 555-0123" oninput="chk()"></div>
+    <div class="fg"><label>City / Area</label><input type="text" id="ccity" placeholder="e.g. Smithfield, Clayton, Garner..." oninput="chk()"></div>
+    <button class="btn" id="n5" disabled onclick="showRes()">See My Estimate →</button>
+    <button class="back" onclick="go(4)">← Back</button>
+  </div>
+
+  <div class="step" id="sR">
+    <div class="res-card">
+      <div class="res-tag">Your Estimated Range</div>
+      <div class="res-price" id="rp">—</div>
+      <div class="res-note" id="rn"></div>
+    </div>
+    <div class="breakdown" id="bd"></div>
+    <a href="tel:+19199999999" class="cta-call">📞 Call Now to Schedule — (919) 999-9999</a>
+    <div class="disc">Estimate based on your inputs. Final price confirmed after a free on-site or photo review. What we quote is what you pay — no hidden fees.</div>
+  </div>
+</div>
+
+<script>
+const A={type:null,acres:1,veg:null,terrain:null};
+document.querySelectorAll('.opt').forEach(o=>{
+  o.addEventListener('click',()=>{
+    const s=o.dataset.s;
+    document.querySelectorAll(`[data-s="${s}"]`).forEach(x=>x.classList.remove('sel'));
+    o.classList.add('sel');
+    if(s==='1'){A.type=o.dataset.v;document.getElementById('n1').disabled=false}
+    if(s==='3'){A.veg=o.dataset.v;document.getElementById('n3').disabled=false}
+    if(s==='4'){A.terrain=o.dataset.v;document.getElementById('n4').disabled=false}
+  });
+});
+function uAcre(v){v=parseFloat(v);A.acres=v;document.getElementById('av').textContent=v<1?v.toFixed(2):v%1===0?v:v.toFixed(1);document.getElementById('au').textContent=v===1?'acre':'acres';}
+function go(n){document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));document.getElementById('s'+n).classList.add('active');const p=n===5?100:(n/5)*100;document.getElementById('fill').style.width=p+'%';document.getElementById('sn').textContent=Math.min(n,5);document.getElementById('spct').textContent=Math.round(p)+'% complete';window.scrollTo({top:0,behavior:'smooth'});}
+function chk(){const ok=document.getElementById('cname').value.trim()&&document.getElementById('cphone').value.trim().length>=10&&document.getElementById('ccity').value.trim();document.getElementById('n5').disabled=!ok;}
+function fmt(n){return'$'+n.toLocaleString()}
+function calc(){
+  const a=A.acres;
+  let lo,hi;
+  if(a<=0.25){lo=2000;hi=2200}else if(a<=0.5){lo=2000;hi=2500}else if(a<=1){lo=2200;hi=2800}else if(a<=2){lo=2800;hi=3800}else if(a<=3){lo=3500;hi=5000}else if(a<=5){lo=4500;hi=7000}else if(a<=8){lo=7000;hi=12000}else if(a<=12){lo=10000;hi=18000}else{lo=15000;hi=30000}
+  const vm={light:1,moderate:1.15,heavy:1.3,trees:1.6}[A.veg]||1;
+  lo=Math.round(lo*vm/100)*100;hi=Math.round(hi*vm/100)*100;
+  if(A.terrain==='steep'){lo+=500;hi+=700}
+  if(A.terrain==='wet'){lo+=300;hi+=500}
+  return{lo,hi};
+}
+function showRes(){
+  const{lo,hi}=calc();
+  document.getElementById('rp').textContent=`${fmt(lo)} – ${fmt(hi)}`;
+  document.getElementById('rn').textContent=A.acres>5?`Multi-day project — machine stays on site.`:`Typically completed in 1 day.`;
+  const vl={light:'Light brush',moderate:'Moderate',heavy:'Heavy / Dense',trees:'Large trees'};
+  const tl={flat:'Flat',gentle:'Gentle slope',steep:'Steep (+$500)',wet:'Wet/boggy (+$300)'};
+  const yl={residential:'Residential',rural:'Rural/Farm',commercial:'Commercial',recreational:'Recreational'};
+  document.getElementById('bd').innerHTML=`
+    <div class="brow"><span class="k">Property type</span><span class="v">${yl[A.type]||'—'}</span></div>
+    <div class="brow"><span class="k">Acreage</span><span class="v">${A.acres} ${A.acres===1?'acre':'acres'}</span></div>
+    <div class="brow"><span class="k">Vegetation</span><span class="v">${vl[A.veg]||'—'}</span></div>
+    <div class="brow"><span class="k">Terrain</span><span class="v">${tl[A.terrain]||'—'}</span></div>
+    <div class="brow"><span class="k">Your estimate</span><span class="v" style="color:#4ade80">${fmt(lo)} – ${fmt(hi)}</span></div>`;
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sR').classList.add('active');
+  document.getElementById('fill').style.width='100%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

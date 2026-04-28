@@ -405,6 +405,66 @@ function Reviews() {
     )
 }
 
+/* ── SERVICE AREAS ── */
+function ServiceAreas() {
+    const ref = useReveal()
+    const counties = [
+        { name: 'Wake County', slug: 'wake-county-nc', cities: ['Fuquay-Varina', 'Garner', 'Willow Spring', 'Apex'] },
+        { name: 'Johnston County', slug: 'johnston-county-nc', cities: ['Clayton', 'Smithfield', 'Selma', 'Benson'] },
+        { name: 'Harnett County', slug: 'harnett-county-nc', cities: ['Angier', 'Lillington', 'Dunn', 'Coats'] },
+    ]
+    const cityPages = [
+        { name: 'Angier, NC', slug: 'angier-nc' },
+        { name: 'Benson, NC', slug: 'benson-nc' },
+        { name: 'Clayton, NC', slug: 'clayton-nc' },
+        { name: 'Garner, NC', slug: 'garner-nc' },
+        { name: 'Selma, NC', slug: 'selma-nc' },
+        { name: 'Smithfield, NC', slug: 'smithfield-nc' },
+    ]
+    return (
+        <section id="service-areas" className="section section--ink" ref={ref}>
+            <div className="container">
+                <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+                    <span className="eyebrow reveal">Where We Work</span>
+                    <h2 className="headline reveal d2" style={{ color: 'var(--cream)' }}>Our Service Area.</h2>
+                    <p style={{ color: 'var(--sand)', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }} className="reveal d3">
+                        We serve Wake, Johnston, and Harnett counties — from south Raleigh to the Sandhills.
+                    </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem', marginBottom: '3rem' }} className="reveal d2">
+                    {counties.map(c => (
+                        <a key={c.slug} href={`/${c.slug}`}
+                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '10px', padding: '2rem', display: 'block', transition: 'border-color 0.3s,transform 0.3s' }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(46,204,95,0.3)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; e.currentTarget.style.transform = 'none' }}>
+                            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, color: 'var(--cream)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>{c.name}</div>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>
+                                {c.cities.map(city => (
+                                    <span key={city} style={{ background: 'rgba(46,204,95,0.1)', border: '1px solid rgba(46,204,95,0.2)', color: 'var(--gold)', fontSize: '0.72rem', fontWeight: 600, padding: '0.2rem 0.65rem', borderRadius: '50px' }}>{city}</span>
+                                ))}
+                            </div>
+                            <span style={{ color: 'var(--amber)', fontWeight: 700, fontSize: '0.85rem' }}>View {c.name} page →</span>
+                        </a>
+                    ))}
+                </div>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '2rem' }} className="reveal">
+                    <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(240,250,242,0.3)', marginBottom: '1rem' }}>City Pages</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                        {cityPages.map(c => (
+                            <a key={c.slug} href={`/${c.slug}`}
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(240,250,242,0.65)', fontSize: '0.85rem', fontWeight: 500, padding: '0.5rem 1.1rem', borderRadius: '6px', transition: 'color 0.2s,border-color 0.2s' }}
+                                onMouseEnter={e => { e.currentTarget.style.color = 'var(--amber)'; e.currentTarget.style.borderColor = 'rgba(46,204,95,0.3)' }}
+                                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(240,250,242,0.65)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)' }}>
+                                {c.name}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
 /* ── FAQ ── */
 function FAQ() {
     const [open, setOpen] = useState(null)
@@ -530,7 +590,7 @@ function Footer() {
                             ]
                         },
                         { title: 'Company', items: [{ l: 'How It Works', id: '#how-it-works' }, { l: 'Reviews', id: '#reviews' }, { l: 'FAQ', id: '#faq' }, { l: 'Get a Quote', id: '#quote-form' }] },
-                        { title: 'Service Area', items: [{ l: 'Willow Spring' }, { l: 'Fuquay-Varina' }, { l: 'Angier' }, { l: 'Benson' }, { l: 'Sanford' }, { l: 'Lillington' }] },
+                        { title: 'Service Area', items: [{ l: 'Wake County', href: '/wake-county-nc' }, { l: 'Johnston County', href: '/johnston-county-nc' }, { l: 'Harnett County', href: '/harnett-county-nc' }, { l: 'Angier', href: '/angier-nc' }, { l: 'Benson', href: '/benson-nc' }, { l: 'Clayton', href: '/clayton-nc' }] },
                     ].map(col => (
                         <div key={col.title}>
                             <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(240,250,242,0.3)', marginBottom: '1rem' }}>{col.title}</div>
@@ -541,6 +601,11 @@ function Footer() {
                                             style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', textDecoration: 'none', transition: 'color 0.2s' }}
                                             onMouseEnter={e => e.target.style.color = 'var(--amber)'}
                                             onMouseLeave={e => e.target.style.color = 'rgba(240,250,242,0.52)'}>{item.l}</Link>
+                                    ) : item.href ? (
+                                        <a key={item.l} href={item.href}
+                                            style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', textDecoration: 'none', transition: 'color 0.2s' }}
+                                            onMouseEnter={e => e.target.style.color = 'var(--amber)'}
+                                            onMouseLeave={e => e.target.style.color = 'rgba(240,250,242,0.52)'}>{item.l}</a>
                                     ) : (
                                         <span key={item.l} onClick={() => item.id && document.querySelector(item.id)?.scrollIntoView({ behavior: 'smooth' })}
                                             style={{ fontSize: '0.83rem', color: 'rgba(240,250,242,0.52)', cursor: item.id ? 'pointer' : 'default', transition: 'color 0.2s' }}
@@ -576,6 +641,7 @@ function HomePage() {
             <HowItWorks />
             <Results />
             <Reviews />
+            <ServiceAreas />
             <FAQ />
             <Quote />
         </main>
