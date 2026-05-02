@@ -2,7 +2,6 @@
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "framework": "vite",
-    "cleanUrls": true,
     "rewrites": [
         { "source": "/angier-nc", "destination": "/angier-nc.html" },
         { "source": "/benson-nc", "destination": "/benson-nc.html" },
@@ -13,6 +12,7 @@
         { "source": "/johnston-county-nc", "destination": "/johnston-county-nc.html" },
         { "source": "/wake-county-nc", "destination": "/wake-county-nc.html" },
         { "source": "/harnett-county-nc", "destination": "/harnett-county-nc.html" },
+        { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
         {
             "source": "/(.*)",
             "destination": "/index.html"
